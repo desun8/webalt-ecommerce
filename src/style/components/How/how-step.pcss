@@ -1,0 +1,86 @@
+.how-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #393939;
+  cursor: pointer;
+
+  @media (--tablet960) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &:hover {
+    & .how-step_index {
+      @media (--tablet960) {
+        color: var(--orange);
+      }
+    }
+
+    & .how-step_icon {
+      @media (--tablet960) {
+        background-color: #393939;
+        box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.18);
+      }
+
+      & svg g,
+      & svg path {
+        fill: #fff;
+      }
+    }
+  }
+
+  &_index {
+    position: absolute;
+    left: 0;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+
+    @media (--tablet960) {
+      @apply --trans-slow;
+
+      top: -72px;
+      left: 51%;
+      color: rgba(0, 0, 0, 0.1);
+      font-size: 118px;
+      line-height: 144px;
+    }
+  }
+
+  &_icon {
+    display: none;
+
+    @media (--tablet960) {
+      @apply --trans-slow;
+
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 180px;
+      height: 180px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+      background-color: #fefefe;
+      border: 1px solid #dbdbdb;
+      z-index: 10;
+    }
+  }
+
+  &_text {
+    padding-left: 53px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+
+    @media (--tablet960) {
+      max-width: 240px;
+      padding-left: 0;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+}

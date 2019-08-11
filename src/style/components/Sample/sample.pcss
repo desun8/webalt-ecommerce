@@ -1,0 +1,309 @@
+.sample {
+  padding: 40px 0;
+  background-color: #393939;
+
+  @media (--tablet960) {
+    @apply --flex-center;
+
+    padding: 0;
+    height: 100vh;
+    background-image: url(./images/sample-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &_wrap {
+    max-width: 1110px;
+    padding: 0 15px;
+
+    @media (--tablet960) {
+      @apply --flex-center;
+
+      flex-direction: column;
+    }
+
+    @media (--desktop1200) {
+      padding: 0;
+    }
+  }
+
+  &_title {
+    margin-bottom: 30px;
+    color: #fff;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    text-align: center;
+
+    @media (--tablet960) {
+      width: 100%;
+      font-size: 42px;
+      line-height: 50px;
+      text-align: left;
+    }
+  }
+}
+
+.sample-list {
+  @apply --list-unstyled;
+
+  @media (--tablet960) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &_item {
+    margin-bottom: 20px;
+
+    @media (--tablet960) {
+      flex: 1 0 25em;
+      margin-bottom: 30px;
+    }
+
+    &:nth-child(2n) {
+      @media (--tablet960) {
+        margin-left: 30px;
+      }
+    }
+
+    &:nth-last-child(2) {
+      margin-bottom: 34px;
+
+      @media (--tablet960) {
+        margin-bottom: 0;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.sample-item {
+  position: relative;
+  width: 100%;
+  height: 204px;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: flex-end;
+  background-color: #393939;
+  overflow: hidden;
+  cursor: pointer;
+
+  @media (--tablet960) {
+    height: 378px;
+    border-radius: 5px;
+  }
+
+  &:hover {
+    & .sample-item_bg {
+      filter: grayscale(0);
+    }
+
+    & .sample-item_index {
+      color: var(--orange);
+    }
+  }
+
+  &--pomidor {
+    & .sample-item_bg {
+      background-image: url(./images/bg-pomidor.jpg);
+    }
+  }
+
+  &--baby {
+    & .sample-item_bg {
+      background-image: url(./images/bg-baby.jpg);
+    }
+  }
+
+  &--apteka {
+    & .sample-item_bg {
+      background-image: url(./images/bg-apteka.jpg);
+    }
+  }
+
+  &_wrap {
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (--tablet960) {
+      padding-bottom: 5px;
+      padding-left: 25px;
+      padding-right: 20px;
+    }
+  }
+
+  &_title,
+  &_index {
+    position: relative;
+    color: #fff;
+    z-index: 5;
+  }
+
+  /* &_title {
+    color: #fff;
+  } */
+
+  &_index {
+    @apply --trans;
+
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+
+    @media (--tablet960) {
+      @apply --trans-slow;
+
+      font-size: 42px;
+      line-height: 50px;
+    }
+  }
+
+  &_bg,
+  &_bg-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &_bg {
+    @apply --trans;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    z-index: 1;
+
+    @media (--tablet960) {
+      @apply --trans-slow;
+    }
+  }
+
+  &_bg-fill {
+    background:
+      linear-gradient(
+        354.96deg,
+        #000 -16.98%,
+        rgba(0, 0, 0, 0) 72.72%
+      );
+    z-index: 2;
+  }
+}
+
+.modal-item {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 205px;
+  padding: 34px 24px;
+  background:
+    linear-gradient(
+      144.73deg,
+      #ef8b54 1.77%,
+      #e17768 98.37%
+    );
+  border-radius: 10px;
+  overflow: hidden;
+
+  @media (--tablet960) {
+    height: 378px;
+    border-radius: 5px;
+  }
+
+  &_icon,
+  &_text,
+  &_btn {
+    position: relative;
+    z-index: 5;
+  }
+
+  &_icon,
+  &_text {
+    flex: 1 0 5em;
+  }
+
+  &_icon {
+    flex-basis: auto;
+    width: 45px;
+    height: 45px;
+    background-image: url(./images/icon-love.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media (--tablet960) {
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  &_text {
+    flex-grow: 6;
+  }
+
+  &_text,
+  &_btn {
+    color: #fff;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+
+    @media (--tablet960) {
+      font-size: 26px;
+      line-height: 32px;
+    }
+  }
+
+  &_btn {
+    @apply --flex-center;
+
+    flex-basis: 100%;
+    align-self: flex-end;
+    height: 46px;
+    background-color: transparent;
+    border: 3px solid #fff;
+    border-radius: 5px;
+
+    @media (--tablet960) {
+      @apply --trans;
+
+      height: 76px;
+    }
+
+    &:hover {
+      @media (--tablet960) {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+
+  &_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/icon-love.svg);
+    background-repeat: no-repeat;
+    background-size: 170px;
+    background-position: 90% 100%;
+    transform: rotate3d(0, 0, 1, -15deg);
+    z-index: 1;
+    opacity: 0.03;
+
+    @media (--tablet960) {
+      top: 90px;
+      background-size: 380px;
+    }
+  }
+}

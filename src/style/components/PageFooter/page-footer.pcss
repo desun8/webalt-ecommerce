@@ -1,0 +1,138 @@
+.page-footer {
+  padding: 50px 0;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #2e2e2e;
+  display: flex;
+  justify-content: center;
+
+  & .wrap {
+    @apply --flex-container;
+
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1110px;
+    width: 100%;
+
+    & > * {
+      @media (--tabletMin) {
+        flex: 1 0 50%;
+        justify-content: space-around;
+        text-align: center;
+      }
+
+      @media (--mobileOnly) {
+        flex: 1 0 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  & h5 {
+    margin-bottom: 14px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+
+  & .logo {
+    @media (--tabletMin) {
+      max-width: 124px;
+      margin-bottom: 50px;
+    }
+  }
+
+  & .list-unstyled {
+    @apply --list-unstyled;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    & li {
+      margin-bottom: 12px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    & a {
+      @apply --trans;
+
+      &:hover {
+        @media (--notTablet) {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.contact {
+  @media (--tabletMin) {
+    margin-bottom: 30px !important;
+  }
+}
+
+.soc {
+  @media (--tabletMin) {
+    margin-bottom: 40px !important;
+  }
+}
+
+.find-us {
+  color: rgba(255, 255, 255, 0.7);
+
+  @media (--tabletMin) {
+    margin-bottom: 0 !important;
+  }
+
+  &_link-wrap {
+    @apply --flex-center;
+    @apply --trans;
+
+    &:hover {
+      @media (--notTablet) {
+        color: #fff;
+
+        & .find-us_text {
+          &::before,
+          &::after {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  &_text {
+    max-width: 160px;
+    position: relative;
+    padding-right: 65px;
+
+    &::before,
+    &::after {
+      @apply --trans;
+      
+      content: '';
+      position: absolute;
+      top: 25%;
+      right: 30px;
+      width: 2px;
+      height: 25px;
+      background-color: #bdbdbd;
+      transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, -40deg);
+    }
+
+    &::after {
+      top: 75%;
+      transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, 40deg);
+      z-index: 5;
+    }
+  }
+
+  &_img {
+    width: 100px;
+    height: 100px;
+    background-image: url(./images/icon-map.png);
+    /* background-position: -629px 0; */
+  }
+}

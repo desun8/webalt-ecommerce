@@ -1,0 +1,125 @@
+.how {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: var(--bg-grey);
+
+  @media (--tablet960) {
+    @apply --flex-center;
+
+    position: relative;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  /* &_bg-dots {
+    @media (--desktop1500) {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 160px;
+      height: 160px;
+      background-image: url(./images/bg-dots.svg);
+    }
+  } */
+
+  &_title {
+    margin-bottom: 38px;
+    text-align: center;
+
+    @media (--tablet960) {
+      margin-bottom: 100px;
+    }
+  }
+
+  &_wrap {
+    @media (--tablet960) {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    @media (--desktop1110) {
+      padding-top: 40px;
+      background-image: url(./images/how-bg-desk1.svg);
+      background-repeat: no-repeat;
+      background-position-x: 105%;
+      background-position-y: 0;
+    }
+
+    @media (--desktop1300) {
+      background-position-x: 120%;
+    }
+
+    @media (--desktop1400) {
+      background-position-x: -40px;
+    }
+
+    @media (--desktop1500) {
+      background-position-x: 15%;
+    }
+
+    @media (--desktop1650) {
+      background-position-x: 35%;
+    }
+  }
+}
+
+.how-list {
+  @apply --list-unstyled;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 10px;
+  background-image: url(./images/how-bg.svg);
+  background-repeat: no-repeat;
+  background-position-x: 12px;
+  background-position-y: 5px;
+
+  @media (--tablet960) {
+    max-width: 990px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    background: none;
+  }
+
+  &_item {
+    margin-bottom: 30px;
+
+    @media (--tablet960) {
+      flex: 1 0 33%;
+      margin-bottom: 0;
+      order: 1;
+    }
+
+    /* First 3 elems */
+    &:nth-child(-n+3) {
+      @media (--tablet960) {
+        margin-bottom: 105px;
+      }
+    }
+
+    &:nth-child(4) {
+      @media (--tablet960) {
+        order: 6;
+      }
+    }
+
+    &:nth-child(5) {
+      @media (--tablet960) {
+        order: 5;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      @media (--tablet960) {
+        order: 4;
+      }
+    }
+  }
+}
