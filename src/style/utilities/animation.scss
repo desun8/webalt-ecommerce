@@ -1,9 +1,17 @@
-%trans {
+@mixin trans {
   transition: all 200ms ease;
 }
 
+@mixin trans-slow {
+  transition: all 300ms ease;
+}
+
+%trans {
+  @include trans;
+}
+
 %trans-slow {
-  transition: all 300ms ease-out;
+  @include trans-slow;
 }
 
 %link-underline {
@@ -21,9 +29,9 @@
     background-color: #fff;
   }
 
-  /* &:hover::after {
-    @media (%tablet960) {
+  &:hover::after {
+    @media (--tablet960) {
       width: 100%;
     }
-  } */
+  }
 }

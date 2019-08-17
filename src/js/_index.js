@@ -1,7 +1,7 @@
-// import './owlCarousel';
+import "./owlCarousel";
 // import './js/redirectTransition';
 // import './js/hotspots';
-// import './pageNav';
+import "./pageNav";
 // import './form';
 // import './heroAnimation';
 // import './modalSample';

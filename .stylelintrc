@@ -15,6 +15,17 @@
 			"declarations"
 		],
 		"order/properties-alphabetical-order": null,
-    "string-quotes": "double"
+    "string-quotes": "double",
+    "max-nesting-depth": [
+      3,
+      {
+        "ignore": [
+          "blockless-at-rules",
+          "pseudo-classes"
+        ],
+        "ignoreAtRules": ["media"]
+      }
+    ],
+    "selector-class-pattern": "^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*(?:_[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$",
   }
 }

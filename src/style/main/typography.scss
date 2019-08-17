@@ -1,0 +1,160 @@
+/* All typography styles */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:700');
+
+/* TITLES */
+@custom-selector :--all-title h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6;
+
+:--all-title {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 26px;
+  line-height: 30px;
+  font-weight: 700;
+
+  @media (--tablet) {
+    margin-bottom: 25px;
+    font-size: 64px;
+    line-height: 78px;
+  }
+
+  @media (--tablet960) {
+    margin-bottom: 18px;
+    font-size: 46px;
+    line-height: 50px;
+  }
+
+  @media (--desktop1200) {
+    margin-bottom: 25px;
+    font-size: 64px;
+    line-height: 78px;
+  }
+}
+
+h2 {
+  margin-bottom: 0;
+  color: #393939;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+
+  @media (--tablet) {
+    margin-bottom: 0;
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  @media (--tablet960) {
+    margin-bottom: 0;
+    font-size: 42px;
+    line-height: 50px;
+  }
+}
+
+h3 {
+  margin-bottom: 0;
+  color: #fff;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+
+  @media (--tablet) {
+    font-size: 34px;
+    line-height: 40px;
+  }
+
+  @media (--tablet960) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  @media (--desktop1200) {
+    font-size: 34px;
+    line-height: 40px;
+  }
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+
+  @media (--tablet960) {
+    font-size: 22px;
+    line-height: 26px;
+  }
+}
+
+/*
+h4 {
+  margin-bottom: 18px;
+  color: var(--black);
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600;
+
+  @media (--mobile) {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+h5 {
+  margin-bottom: 12px;
+  color: var(--black);
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.h1-small {
+  font-size: 36px;
+  font-style: normal;
+
+  @media (--mobile) {
+    font-size: inherit;
+  }
+}
+
+.h2-large {
+  font-size: 42px;
+  line-height: 48px;
+
+  @media (--mobile) {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.h2-mb-small {
+  margin-bottom: 60px;
+
+  @media (--mobile) {
+    margin-bottom: 40px;
+  }
+} */
+
+/* PARAGRAPHS and other TEXT */
+@custom-selector :--paragraph p, .p;
+
+:--paragraph {
+  margin: 0;
+}
+
+/* span,
+.span {
+  font-family: var(--secFont);
+  font-size: 14px;
+  line-height: 18px;
+
+  @media (--md) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+} */

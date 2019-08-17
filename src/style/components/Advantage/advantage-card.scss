@@ -1,0 +1,123 @@
+.advantage-card {
+  width: 100%;
+
+  &:hover {
+    .advantage-card_describe {
+      opacity: 1;
+    }
+
+    .advantage-card_title {
+      color: $orange;
+    }
+  }
+
+  @media (--desktop1200) {
+    width: 450px;
+  }
+
+  &_main {
+    position: relative;
+    width: 100%;
+    height: 248px;
+    margin-bottom: 18px;
+    background-color: #1b1b1b;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 65%;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+
+    @media (--desktop1200) {
+      height: 400px;
+      margin-bottom: 30px;
+    }
+
+    &.img-robot {
+      background-image: url("./images/advantage-robot.svg");
+      background-size: 195px;
+
+      @media (--desktop1200) {
+        background-size: 314px;
+      }
+    }
+
+    &.img-lab {
+      background-image: url("./images/advantage-lab.svg");
+      background-size: 255px;
+      background-position-y: 50%;
+
+      @media (--desktop1200) {
+        background-size: 410px;
+      }
+    }
+
+    &.img-desk {
+      background-image: url("./images/advantage-desk.svg");
+      background-size: 222px;
+      background-position-y: 78%;
+
+      @media (--desktop1200) {
+        background-size: 358px;
+      }
+    }
+
+    &.img-launch {
+      background-image: url("./images/advantage-launch.svg");
+      background-size: 265px;
+      background-position-y: 75%;
+
+      @media (--desktop1200) {
+        background-size: 427px;
+      }
+    }
+
+    &.img-phone {
+      background-image: url("./images/advantage-phone.svg");
+      background-size: 231px;
+      background-position-y: 80%;
+
+      @media (--desktop1200) {
+        background-size: 372px;
+      }
+    }
+  }
+
+  &_describe {
+    @extend %trans-slow;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #1b1b1b;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    opacity: 0;
+
+    @media (--desktop1200) {
+      font-size: 22px;
+      line-height: 35px;
+    }
+  }
+
+  &_title {
+    @extend %trans-slow;
+
+    display: inline-block;
+    width: 65%;
+    font-size: 14px;
+    line-height: 18px;
+
+    @media (--desktop1200) {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+}

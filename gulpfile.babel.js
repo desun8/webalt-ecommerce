@@ -12,6 +12,7 @@ import fileInclude from "gulp-file-include";
 import sass from "gulp-sass";
 import postCss from "gulp-postcss";
 import postcssPresetEnv from "postcss-preset-env";
+import postcssCustomMedia from "postcss-custom-media";
 // import cssNano from 'cssnano';
 
 // Img
@@ -23,6 +24,8 @@ import svgSprite from "gulp-svg-sprite";
 // import uglify from "gulp-uglify";
 import webpack from "webpack";
 import webpackStream from "webpack-stream";
+
+sass.compiler = require("node-sass");
 
 // Path
 const buildPath = "./dist";
@@ -42,7 +45,7 @@ const paths = {
     dest: buildPath,
   },
   css: {
-    core: "./src/style/_index.scss",
+    core: "./src/style/index.scss",
     src: "./src/style/**/*.{scss, css}",
     dest: buildPath,
   },
@@ -295,6 +298,7 @@ const svgSpriteConfig = {
 
 // PostCss plugins
 const postCssPlugins = [
+  postcssCustomMedia(),
   postcssPresetEnv({ stage: 0 }),
   // cssNano({ preset: "default" })
 ];

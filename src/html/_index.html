@@ -11,27 +11,29 @@
   <body>
     <div id="fullPage">
       <div class="section">
-        @@include('page-header.html')
-        @@include('hero.html')
+        @@include('page-header.html') @@include('hero.html')
       </div>
-      <!-- <div id="sectionWhy" class="section">
-        ${require('html-loader!./html/why.html')}
+      <div id="sectionAdvantage" class="section">
+        @@include('advantage.html')
       </div>
       <div id="sectionHow" class="section">
-        ${require('html-loader!./html/how.html')}
+        @@include('how.html');
       </div>
-      <div class="section">
+      <!-- <div class="section">
         ${require('html-loader!./html/sample.html')}
-      </div>
-      <div class="section">
+      </div> -->
+      <!-- <div class="section">
         ${require('html-loader!./html/clients.html')}
-      </div>
-      <div id="sectionFeedback" class="section">
+      </div> -->
+      <!-- <div id="sectionFeedback" class="section">
         ${require('html-loader!./html/feedback.html')}
         ${require('html-loader!./html/page-footer.html')}
       </div> -->
     </div>
 
     <!-- ${require('html-loader!./html/modal-sample.html')} -->
+
+    <script src="index.bundle.js"></script>
+    <script src="vendors~index.bundle.js"></script>
   </body>
 </html>
