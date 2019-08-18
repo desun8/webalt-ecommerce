@@ -1,14 +1,18 @@
 .how {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: var(--bg-grey);
+  background-color: #fff;
 
-  @media (--tablet960) {
+  @media (--desktop1200) {
     @include flex-center;
 
     position: relative;
     flex-direction: column;
     height: 100vh;
+    background-color: $mainBg;
+    background-image: url("./images/bg-how.png");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   /* &_bg-dots {
@@ -26,8 +30,11 @@
     margin-bottom: 38px;
     text-align: center;
 
-    @media (--tablet960) {
+    @media (--desktop1200) {
       margin-bottom: 100px;
+      color: #fff;
+      font-size: 26px;
+      line-height: 32px;
     }
   }
 
@@ -38,23 +45,25 @@
       justify-content: center;
     }
 
-    @media (--desktop1110) {
+    @media (--desktop1200) {
       padding-top: 40px;
-      background-image: url("./images/bg-how-desk1.svg");
+      background-image: url("./images/bg-how-desk.svg");
       background-repeat: no-repeat;
-      background-position-x: 105%;
+      background-size: 95%;
+      background-position-x: 50%;
       background-position-y: 0;
     }
 
-    @media (--desktop1300) {
-      background-position-x: 120%;
-    }
+    // @media (--desktop1300) {
+    //   background-position-x: 120%;
+    // }
 
-    @media (--desktop1400) {
-      background-position-x: -40px;
-    }
+    // @media (--desktop1400) {
+    //   background-position-x: -40px;
+    // }
 
     @media (--desktop1500) {
+      background-size: 1395px;
       background-position-x: 15%;
     }
 
@@ -70,46 +79,58 @@
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 30px;
-  padding-right: 10px;
+  // padding-right: 10px;
   background-image: url("./images/bg-how.svg");
   background-repeat: no-repeat;
   background-position-x: 12px;
   background-position-y: 5px;
+  background-size: 5px;
 
-  @media (--tablet960) {
+  @media (--desktop1200) {
     max-width: 990px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    // align-items: center;
     padding: 0;
     background: none;
   }
 
   &_item {
     margin-bottom: 30px;
+    padding-right: 15px;
+    padding-bottom: 30px;
 
-    @media (--tablet960) {
+    @media (--desktop1200) {
       flex: 1 0 33%;
       margin-bottom: 0;
       order: 1;
+      padding: 0;
     }
 
     /* First 3 elems */
     &:nth-child(-n+3) {
-      @media (--tablet960) {
+      @media (--desktop1200) {
+        margin-bottom: 85px;
+      }
+
+      @media (--desktop1400) {
+        margin-bottom: 95px;
+      }
+
+      @media (--desktop1500) {
         margin-bottom: 105px;
       }
     }
 
     &:nth-child(4) {
-      @media (--tablet960) {
+      @media (--desktop1200) {
         order: 6;
       }
     }
 
     &:nth-child(5) {
-      @media (--tablet960) {
+      @media (--desktop1200) {
         order: 5;
       }
     }
@@ -117,7 +138,7 @@
     &:last-child {
       margin-bottom: 0;
 
-      @media (--tablet960) {
+      @media (--desktop1200) {
         order: 4;
       }
     }

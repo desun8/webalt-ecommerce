@@ -51,6 +51,7 @@ const paths = {
   },
   img: {
     src: "./src/images/*.{png,jpeg,jpg,svg}",
+    svgNoStyle: "./src/images/svgNoStyle/*.svg",
     dest: `${buildPath}/images`,
   },
   spriteSvg: {
@@ -350,6 +351,18 @@ function imageMin(done) {
   done();
 }
 
+function svgNoStyle(done) {
+  gulp
+    .src(paths.img.svgNoStyle)
+    .pipe(
+      imgMin([
+        imgMin.svgo(svgoParamsClearStyle),
+      ]),
+    )
+    .pipe(gulp.dest(paths.img.dest));
+  done();
+}
+
 function spriteSvg(done) {
   const name = "plus";
 
@@ -433,6 +446,7 @@ function serve(done) {
 
 // Tasks
 export { imageMin as imagemin };
+export { svgNoStyle as svgclear };
 export { spriteSvg as spritesvg };
 
 const def = gulp.parallel(watch, serve);

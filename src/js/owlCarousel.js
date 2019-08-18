@@ -5,9 +5,13 @@ import $ from "jquery";
   document.addEventListener("DOMContentLoaded", () => {
     const isDesktop = window.matchMedia("(min-width: 1200px)").matches;
 
+    // TODO: remove
+    console.log(`is mobile: ${!isDesktop}`);
+
     if (!isDesktop) return false;
 
     const owl = $(".advantage-list");
+    owl.addClass("owl-carousel");
 
     owl.owlCarousel({
       item: 1,

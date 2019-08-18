@@ -83,13 +83,13 @@ body {
 
 .only-desktop {
   @media (--tabletMin) {
-    display: none;
+    display: none !important;
   }
 }
 
 .only-mobile {
   @media (--notTablet) {
-    display: none;
+    display: none !important;
   }
 }
 

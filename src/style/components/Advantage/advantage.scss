@@ -23,6 +23,12 @@
       width: 100%;
       height: 100%;
     }
+
+    @media (--desktop1500) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   &_top {
@@ -120,6 +126,10 @@
 
     @media (--desktop1400) {
       left: 26.6%;
+    }
+
+    @media (--desktop1500) {
+      bottom: 35.4%;
     }
   }
 
