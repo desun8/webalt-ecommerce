@@ -1,12 +1,14 @@
+// Core
+@import "var";
+
+// @import "../../node_modules/simplebar/dist/simplebar.min.css";
+
 // Lib
 @import "lib/normalize";
 @import "lib/owl.carousel";
 // @import "../node_modules/animate.css/animate.css";
-// @import "lib/simplebar.scss";
+@import "lib/simplebar";
 // @import "lib/sprite.css";
-
-// Core
-@import "var";
 
 // Main
 @import "main/scaffolding";
@@ -26,14 +28,23 @@
 @import "components/PageHeader/page-header";
 @import "components/PageHeader/header-phone";
 @import "components/PageNav/page-nav";
-// @import "components/PageFooter/page-footer.scss";
+@import "components/PageFooter/page-footer";
 @import "components/Hero/hero";
+@import "components/Hero/modal-hero";
 @import "components/Advantage/advantage";
 @import "components/Advantage/advantage-card";
 @import "components/How/how";
 @import "components/How/how-step";
-// @import "components/Sample/sample.scss";
-// @import "components/Sample/modal-sample.scss";
-// @import "components/Clients/clients.scss";
-// @import "components/Feedback/feedback.scss";
-// @import "components/Feedback/form-feedback.scss";
+@import "components/Features/features";
+@import "components/Features/feature";
+@import "components/Sample/sample";
+@import "components/Sample/sample-item";
+@import "components/Sample/modal-sample";
+@import "components/Templates/templates";
+@import "components/Templates/template";
+@import "components/Templates/modal-templates";
+@import "components/Clients/clients";
+@import "components/Feedback/feedback";
+@import "components/Feedback/form-feedback";
+@import "components/Feedback/modal-form";
+@import "components/bg-icons";

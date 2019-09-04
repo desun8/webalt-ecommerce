@@ -17,21 +17,31 @@
         @@include('advantage.html')
       </div>
       <div id="sectionHow" class="section">
-        @@include('how.html');
+        @@include('how.html')
       </div>
-      <!-- <div class="section">
-        ${require('html-loader!./html/sample.html')}
-      </div> -->
-      <!-- <div class="section">
-        ${require('html-loader!./html/clients.html')}
-      </div> -->
-      <!-- <div id="sectionFeedback" class="section">
-        ${require('html-loader!./html/feedback.html')}
-        ${require('html-loader!./html/page-footer.html')}
-      </div> -->
+      <div id="sectionFeatures" class="section">
+        @@include('features.html')
+      </div>
+      <div id="sectionSample" class="section">
+        @@include('sample.html')
+      </div>
+      <div id="sectionTemplates" class="section">
+        @@include('templates.html')
+      </div>
+      <div id="sectionClients" class="section">
+        @@include('clients.html')
+      </div>
+      <div id="sectionFeedback" class="section">
+        @@include('feedback.html')
+        @@include('page-footer.html')
+      </div>
     </div>
 
-    <!-- ${require('html-loader!./html/modal-sample.html')} -->
+    @@include('modal-hero.html')
+    @@include('modal-how-describe.html')
+    @@include('modal-sample.html')
+    @@include('modal-templates.html')
+    @@include('modal-feedback.html')
 
     <script src="index.bundle.js"></script>
     <script src="vendors~index.bundle.js"></script>

@@ -10,10 +10,16 @@ html {
 }
 
 body {
+  -webkit-overflow-scrolling: touch;
   min-height: 100%;
+  background-color: $mainBg;
   font-family: var(--mainFont);
   font-size: 100%;
   color: #fff;
+}
+
+.section {
+  position: relative;
 }
 
 // .icon-arrow {

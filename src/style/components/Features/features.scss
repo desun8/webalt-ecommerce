@@ -1,0 +1,68 @@
+.features {
+  background-color: $mainBg;
+  background-image: url("./images/bg-features-2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media (--mobileSm) {
+    background-size: 100% 120%;
+  }
+
+  @media (--desktop1200) {
+    background-image: url("./images/bg-features-desk.png");
+  }
+
+  &_wrap {
+    @extend %wrap-wide;
+
+    padding-top: 90px;
+    padding-bottom: 120px;
+
+    @media (--desktop1200) {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+      padding: 0;
+    }
+  }
+}
+
+.features-list {
+  @extend %list-unstyled;
+
+  @media (--desktop1200) {
+    height: auto;
+    margin-bottom: 10px;
+  }
+}
+
+.features-tabs {
+  @extend %flex-center;
+
+  &_btn {
+    @extend %trans;
+
+    margin-left: 100px;
+    color: #fff;
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration: underline;
+    opacity: 0.4;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &.is-active {
+      color: $orange;
+      opacity: 1;
+    }
+  }
+}

@@ -1,19 +1,35 @@
 .how {
-  padding-top: 40px;
-  padding-bottom: 40px;
   background-color: #fff;
 
   @media (--desktop1200) {
-    @include flex-center;
-
-    position: relative;
-    flex-direction: column;
-    height: 100vh;
     background-color: $mainBg;
-    background-image: url("./images/bg-how.png");
-    background-repeat: no-repeat;
-    background-size: cover;
   }
+
+  &_blur-wrap {
+    padding-top: 40px;
+    padding-bottom: 30px;
+
+    @media (--desktop1200) {
+      @include flex-center;
+      @include trans;
+
+      position: relative;
+      flex-direction: column;
+      height: 100vh;
+      background-color: $mainBg;
+      background-image: url("./images/bg-how.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: blur(0);
+      will-change: filter;
+    }
+
+    &.is-blur {
+      filter: blur(5px);
+    }
+  }
+
+
 
   /* &_bg-dots {
     @media (--desktop1500) {

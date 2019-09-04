@@ -1,0 +1,128 @@
+.clients {
+  position: relative;
+  background-color: $mainBg;
+  padding: 50px 0;
+
+  @media (--desktop1200) {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    // padding-top: 100px;
+    padding-top: 0;
+    background-image: url("./images/bg-clients-desk.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &_wrap {
+    padding: 0 30px;
+    max-width: 1565px;
+    width: 100%;
+
+    @media (--desktop1200) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
+  }
+
+  &_title {
+    color: #fff;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 40px;
+
+    @media (--desktop1200) {
+      // margin-bottom: 80px;
+      margin-bottom: 0;
+      width: 100%;
+      font-size: 42px;
+      line-height: 50px;
+    }
+  }
+}
+
+/* .slider {
+  display: flex !important;
+  justify-content: center;
+} */
+
+.slider-elem {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  @media (--desktop1200) {
+    padding-top: 50px;
+  }
+
+  // @media (--desktop1650) {
+  //   padding-right: 75px;
+  // }
+
+  &_index {
+    position: absolute;
+    display: none;
+    z-index: 1;
+
+    @media (--desktop1200) {
+      @include trans-slow;
+
+      display: block;
+      top: -22px;
+      left: 51%;
+      color: rgba(255, 255, 255, 0.1);
+      font-size: 118px;
+      line-height: 144px;
+      font-weight: 700;
+    }
+
+    @media (--desktop1650) {
+      font-size: 190px;
+      line-height: 230px;
+      left: auto;
+      right: 20px;
+    }
+  }
+
+  &_icon {
+    @extend %flex-center;
+
+    position: relative;
+    width: 210px;
+    height: 210px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 5;
+
+    @media (--desktop1650) {
+      width: 316px;
+      height: 316px;
+    }
+
+    &:hover {
+      &~.slider-elem_index {
+        @media (--desktop1200) {
+          color: var(--orange);
+          text-shadow: 5px 5px 5px rgba(239, 139, 84, 0.15);
+        }
+      }
+    }
+
+    img {
+      max-width: 150px;
+
+      @media (--desktop1650) {
+        max-width: 200px;
+      }
+    }
+  }
+}

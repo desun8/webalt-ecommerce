@@ -1,0 +1,386 @@
+.modal-hero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  padding-top: 64px;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateX(100%);
+  z-index: 500;
+
+  @media (--desktop1200) {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  &_scroll-wrap {
+    @extend %wrap-wide;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 64px;
+    height: 100%;
+    overflow-y: scroll;
+
+    @media (--desktop1200) {
+      @include flex-center;
+
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+
+      padding-top: 60px;
+      padding-bottom: 60px;
+      background-color: rgba(20, 20, 20, 0.3);
+    }
+
+    @media (min-height: 900px) {
+      max-height: 730px;
+    }
+  }
+}
+
+.modal-hero-close {
+  @extend %trans;
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: 0;
+  z-index: 10;
+
+  // @media (--desktop1200) {
+  //   display: none;
+  // }
+
+  &::before,
+  &::after {
+    @extend %trans;
+
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    height: 28px;
+    background-color: #c4c4c4;
+    transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, -45deg);
+
+    @media (--desktop1200) {
+      width: 4px;
+      height: 44px;
+    }
+  }
+
+  &::after {
+    transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, 45deg);
+  }
+
+  &:hover {
+
+    &::before,
+    &::after {
+      @media (--desktop1200) {
+        background-color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+}
+
+.modal-hero-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 30px;
+  padding: 10px;
+
+  color: #fff;
+  background-color: #141414;
+  font-family: $roboto;
+  border-radius: 6px;
+
+  @media (--desktop1200) {
+    flex: 1 0 33%;
+    height: 100%;
+    margin-bottom: 0;
+    padding: 0 55px;
+    background-color: transparent;
+    background-image: url("./images/hero-modal-bg-pattern.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-right: 1px solid rgba(251, 251, 251, 0.2);
+    border-radius: 0;
+  }
+
+  &--1 {
+    @media (--desktop1200) {
+      order: 1;
+    }
+  }
+
+  &--2 {
+    @media (--desktop1200) {
+      order: 3;
+      border-right: 0;
+    }
+  }
+
+  &--3 {
+    background-color: transparent;
+
+    @media (--desktop1200) {
+      order: 2;
+    }
+  }
+
+  &_title {
+    margin-bottom: 20px;
+    font-size: 9px;
+    line-height: 11px;
+    font-weight: 500;
+    text-align: center;
+
+    @media (--desktop1200) {
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+
+  &_img {
+    position: relative;
+    margin-bottom: 26px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @media (--desktop1200) {
+      margin-bottom: 38px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 1px;
+      background-color: #454545;
+
+      @media (--desktop1200) {
+        content: none;
+      }
+    }
+
+    &--sterh {
+      width: 54px;
+      height: 74px;
+      background-image: url("./images/awards-sterh.png");
+
+      @media (--desktop1200) {
+        width: 138px;
+        height: 194px;
+      }
+    }
+
+    &--runet {
+      width: 60px;
+      height: 74px;
+      background-image: url("./images/awards-runet.png");
+
+      @media (--desktop1200) {
+        width: 132px;
+        height: 164px;
+      }
+    }
+  }
+
+  &_list {
+    @extend %list-unstyled;
+
+    max-height: 0;
+    color: #fff;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 15px;
+    overflow: hidden;
+
+    @media (--desktop1200) {
+      max-height: 100%;
+      margin-bottom: 50px;
+    }
+
+    li {
+      position: relative;
+      margin-bottom: 26px;
+      text-align: center;
+
+      @media (--desktop1200) {
+        margin-bottom: 40px;
+      }
+
+      &:last-child {
+        &::after {
+          content: none;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 1px;
+        background-color: #454545;
+
+        @media (--desktop1200) {
+          bottom: -20px;
+        }
+      }
+
+      span {
+        display: inline-block;
+        margin-bottom: 7px;
+
+        &:nth-of-type(2n) {
+          opacity: 0.7;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &_btn-collapse {
+    @extend %flex-center;
+    @extend %trans-slow;
+
+    width: 266px;
+    height: 36px;
+    color: #141414;
+    background-color: $orange;
+    font-family: $roboto;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 300;
+    border-radius: 6px;
+
+    @media (--desktop1200) {
+      display: none;
+    }
+
+    &.is-active {
+      background-color: #fff;
+
+      .open {
+        display: none;
+      }
+
+      .close {
+        display: inline;
+      }
+    }
+
+    .close {
+      display: none;
+    }
+
+  }
+}
+
+.modal-hero-subitem {
+  @extend %list-unstyled;
+
+  margin-bottom: 30px;
+  padding: 15px;
+  color: #fff;
+  background-color: #141414;
+  font-size: 9px;
+  line-height: 11px;
+
+  @media (--desktop1200) {
+    background-color: transparent;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+  }
+
+  &_img {
+    margin: 0 auto;
+    margin-bottom: 20px !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    &::after {
+      bottom: -10px !important;
+    }
+
+    &--1c {
+      width: 65px;
+      height: 40px;
+      background-image: url("./images/awards-1c.svg");
+
+      @media (--desktop1200) {
+        width: 104px;
+        height: 62px;
+      }
+    }
+
+    &--young {
+      width: 157px;
+      height: 45px;
+      background-image: url("./images/awards-young.png");
+
+      @media (--desktop1200) {
+        width: 152px;
+        height: 72px;
+      }
+    }
+
+    &--khv {
+      width: 52px;
+      height: 62px;
+      background-image: url("./images/awards-khv.png");
+
+      @media (--desktop1200) {
+        width: 82px;
+        height: 98px;
+      }
+    }
+  }
+
+  li {
+    position: relative;
+    margin-bottom: 12px;
+    text-align: center;
+
+    &:last-child {
+      &::after {
+        content: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 1px;
+      background-color: #454545;
+    }
+  }
+}

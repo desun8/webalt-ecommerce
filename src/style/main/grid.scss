@@ -4,9 +4,13 @@
   align-items: center;
 }
 
-%flex-container {
+@mixin flex-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+%flex-container {
+  @include flex-container;
 }
 
 %flex-center {

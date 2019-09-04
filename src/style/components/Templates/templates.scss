@@ -1,0 +1,50 @@
+.templates {
+  background-color: $mainBg;
+  background-image: url("./images/bg-templates.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200% 100%;
+
+  @media (--desktop1200) {
+    position: relative;
+    background-image: url("./images/bg-templates-desk.png");
+    background-size: cover;
+  }
+
+  // &::after {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   width: 2px;
+  //   height: 100%;
+  //   background: linear-gradient(rgba(255, 255, 255, 0) 16%, #fff 48%, rgba(255, 255, 255, 0) 82%);
+  //   opacity: 0.2;
+
+  //   @media (--desktop1200) {
+  //     content: "";
+  //   }
+  // }
+
+  &_wrap {
+    @extend %wrap-wide;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @media (--desktop1200) {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      // align-items: stretch;
+      height: 100vh;
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    @media (--desktop1500) {
+      max-width: calc((1464 + 20 * 2) * 1px);
+    }
+  }
+}

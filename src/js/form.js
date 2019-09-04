@@ -1,78 +1,143 @@
-import IMask from 'imask';
+// import IMask from "imask";
+import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
-document.addEventListener('DOMContentLoaded', () => {
-  const desktop = window.matchMedia('(min-width: 60em)');
+(() => {
+  document.addEventListener("DOMContentLoaded", () => {
+    const formFeedback = _$("#mainFeedbackForm");
+    const modalFeedback = _$("#modalFeedback");
+    const btnHeroOpenModal = _$("#js-heroBtn");
+    const btnOpenModal = _$("#showModalForm");
+    const btnCloseModal = _$("#modalFeedbackClose");
 
-  const formFeedback = document.querySelector('#mainFeedbackForm');
-  const formCall = document.querySelector('#formCall');
+    const sampleBlock = _$(".sample_blur-wrap");
 
-  // inputMask
-  const formFeedbackMask = new IMask(
-    formFeedback.querySelector('.form-feedback_phone'), {
-      mask: '+{7} (000) 000-00-00',
-    },
-  );
+    // const showSuccessMessage = (modal = false) => {
+    //   modalOk.style.right = null;
+    //   modalOk.style.visibility = "visible";
+    //   modalOk.style.opacity = 1;
+    //   modalOk.style.height = "100vh";
+    //   setTimeout(() => {
+    //     mainPage.style.filter = "blur(5px)";
+    //   }, 200);
 
-  const formCallMask = new IMask(
-    formCall.querySelector('input[name=phone]'), {
-      mask: '+{7} (000) 000-00-00',
-    },
-  );
+    //   document.body.style.cssText = `height: 100%; overflow: hidden; padding-right: ${scrollbarWidth}px`;
 
-  // submit forms
-  formFeedback.addEventListener('submit', (e) => {
-    e.preventDefault();
+    //   setTimeout(() => {
+    //     modalOk.style.visibility = null;
+    //     modalOk.style.opacity = null;
+    //     modalOk.style.height = null;
+    //     modalFeedback.style.height = null;
+    //     mainPage.style.filter = null;
 
-    const name = e.currentTarget.querySelector('input[name=name]');
-    const phone = e.currentTarget.querySelector('input[name=phone]');
-    const message = e.currentTarget.querySelector('textarea[name=message]');
-    const agreements = e.currentTarget.querySelector('#feedback-agreements');
+    //     modalFeedback.style.right = "-14px";
+    //     document.body.style.cssText = null;
+    //   }, 5000);
+    // };
 
-    if (name.value && phone.value.length === 18 && message.value && agreements.checked) {
-      const formData = new FormData(e.currentTarget);
-
-      fetch('/cart/registration', {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formData,
-      }).then((res) => {
-        if (res.ok) {
-
+    // Открытие/закрытие модальной формы
+    [btnHeroOpenModal, btnOpenModal].forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (isDesktop) {
+          sampleBlock.classList.add("is-blur");
         }
-      }).catch((err) => {
-        console.log(`Ошибка! ${err}`);
+
+        disablePageScroll();
+        modalFeedback.classList.add("is-active");
       });
-    }
-  })
+    });
 
-  formCall.addEventListener('submit', (e) => {
-    e.preventDefault();
+    btnCloseModal.addEventListener("click", () => {
+      if (isDesktop) {
+        sampleBlock.classList.remove("is-blur");
+      }
 
-    const phone = e.currentTarget.querySelector('input[name=phone]');
+      enablePageScroll();
+      modalFeedback.classList.remove("is-active");
+    });
 
-    if (phone.value.length === 18) {
-      const formData = new FormData(e.currentTarget);
+    // inputMask
+    // const formFeedbackMask = new IMask(
+    //   formFeedback.querySelector(".form-feedback_phone"),
+    //   {
+    //     mask: "+{7} (000) 000-00-00",
+    //   },
+    // );
 
-      fetch('/cart/registration', {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formData,
-      }).then((res) => {
-        if (res.ok) {
-          if (desktop.matches) {
-            const success = document.querySelector('.hero_success');
-            success.classList.add('hero_success--show');
-            setTimeout(() => {
-              success.classList.remove('hero_success--show');
-            }, 1000);
-          } else {
-            alert('Ваш запрос был успешно отправлен! При желании, вы можете отправить его повторно ;');
-          }
-        }
-      }).catch((err) => {
-        console.log(`Ошибка! ${err}`);
-      });
-    }
+    // submit forms
+    // formFeedback.addEventListener("submit", e => {
+    //   e.preventDefault();
+
+    //   const name = e.currentTarget.querySelector("input[name=name]");
+    //   const phone = e.currentTarget.querySelector("input[name=phone]");
+    //   const message = e.currentTarget.querySelector("textarea[name=message]");
+    //   const agreements = e.currentTarget.querySelector("#feedback-agreements");
+
+    //   if (
+    //     name.value &&
+    //     phone.value.length === 18 &&
+    //     message.value &&
+    //     agreements.checked
+    //   ) {
+    //     const formData = new FormData(e.currentTarget);
+
+    //     fetch("/cart/registration", {
+    //       method: "POST",
+    //       mode: "no-cors",
+    //       body: formData,
+    //     })
+    //       .then(res => {
+    //         if (res.ok) {
+    //           showSuccessMessage();
+    //         }
+    //       })
+    //       .catch(err => {
+    //         console.log(`Ошибка! ${err}`);
+    //       });
+    //   }
+    // });
+
+    // btnModalFeedbackSubmit.addEventListener("click", () => {
+    //   // e.preventDefault();
+    //   modalFeedbackForm.addEventListener("submit", e => {
+    //     e.preventDefault();
+    //   });
+
+    //   const name = modalFeedbackForm.querySelector("input[name=name]");
+    //   const phone = modalFeedbackForm.querySelector("input[name=phone]");
+    //   const message = modalFeedbackForm.querySelector("textarea[name=message]");
+    //   const agreements = modalFeedbackForm.querySelector(
+    //     "#modal-feedback-agreements",
+    //   );
+
+    //   if (phone.value.length < 18) {
+    //     phone.classList.add("error");
+    //   } else {
+    //     phone.classList.remove("error");
+    //   }
+
+    //   if (
+    //     name.value &&
+    //     phone.value.length === 18 &&
+    //     message.value &&
+    //     agreements.checked
+    //   ) {
+    //     const formData = new FormData(modalFeedbackForm);
+
+    //     fetch("/cart/registration", {
+    //       method: "POST",
+    //       mode: "no-cors",
+    //       // headers: myHeaders,
+    //       body: formData,
+    //     })
+    //       .then(res => {
+    //         if (res.ok) {
+    //           showSuccessMessage();
+    //         }
+    //       })
+    //       .catch(err => {
+    //         console.log(`Ошибка! ${err}`);
+    //       });
+    //   }
+    // });
   });
-});
-
+})();

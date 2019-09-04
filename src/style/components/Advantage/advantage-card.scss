@@ -1,7 +1,13 @@
 .advantage-card {
+  @extend %trans-slow;
+
   width: 100%;
 
   &:hover {
+    @media (--desktop1200) {
+      transform: translateY(-25px);
+    }
+
     .advantage-card_describe {
       opacity: 1;
     }
