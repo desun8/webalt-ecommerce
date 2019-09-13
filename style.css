@@ -1108,7 +1108,7 @@ button {
 @custom-media --sm520 (width >= 480px);
 @custom-media --md (width >= 768px); */
 .owl-carousel .owl-nav button.owl-prev,
-.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-dots button.owl-dot, .custom-checkbox, .custom-checkbox_checkmark::after, .page-nav_list li::after, .header-phone_modal, .page-footer .list-unstyled a, .find-us_link-wrap, .find-us_text::before, .find-us_text::after, .hero_img .btn, .hero_btn .btn .icon-arrow, .modal-hero-close, .modal-hero-close::before, .modal-hero-close::after, .modal-how-describe .icon-close::before, .modal-how-describe .icon-close::after, .features-tabs_btn, .modal-sample-close, .modal-sample-close::before, .modal-sample-close::after, .template_title, .template_btn, .modal-templates-close, .modal-templates-close::before, .modal-templates-close::after, .modal_close {
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-dots button.owl-dot, .custom-checkbox, .custom-checkbox_checkmark::after, .page-nav_list li::after, .header-phone_modal, .page-footer .list-unstyled a, .find-us_link-wrap, .find-us_text::before, .find-us_text::after, .hero_img .btn, .hero_btn .btn .icon-arrow, .modal-hero-close, .modal-hero-close::before, .modal-hero-close::after, .modal-how-describe .icon-close::before, .modal-how-describe .icon-close::after, .features-tabs_btn, .modal-sample-close, .modal-sample-close::before, .modal-sample-close::after, .template_title, .template_btn, .modal-templates-close, .modal-templates-close::before, .modal-templates-close::after, .modal-template_close, .modal_close {
   transition: all 200ms ease; }
 
 .page-nav, .hero_success, .modal-hero-item_btn-collapse, .advantage-btn, .advantage-btn svg, .advantage-card, .advantage-card_describe, .advantage-card_title, .how-step_icon svg, .how-step_more, .how-step_describe, .modal-how-describe, .sample-item, .sample-item::after, .sample-item_icon-click, .modal-sample-wrap, .modal-sample_fullscreen:hover, .modal, .modal .btn {
@@ -3580,6 +3580,9 @@ button {
       @media (min-width: 93.75em) {
         .modal-template_close--right {
           right: 11.55%; } }
+    .modal-template_close:hover {
+      background-color: #c66841;
+      border-color: #c66841; }
 
 .clients {
   position: relative;
