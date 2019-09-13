@@ -1834,8 +1834,7 @@ button {
   z-index: 500; }
   @media (min-width: 75em) {
     .modal-hero {
-      background-color: rgba(0, 0, 0, 0.7);
-      overflow: hidden; } }
+      background-color: rgba(0, 0, 0, 0.7); } }
   .modal-hero_scroll-wrap {
     position: absolute;
     top: 0;
