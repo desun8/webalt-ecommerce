@@ -1857,7 +1857,7 @@ button {
         overflow: hidden; } }
     @media (min-height: 900px) {
       .modal-hero_scroll-wrap {
-        max-height: 730px; } }
+        max-height: 790px; } }
 
 .modal-hero-close {
   position: absolute;
@@ -1921,7 +1921,8 @@ button {
     background-color: transparent; }
     @media (min-width: 75em) {
       .modal-hero-item--3 {
-        order: 2; } }
+        order: 2;
+        justify-content: center; } }
   .modal-hero-item_title {
     margin-bottom: 20px;
     font-size: 9px;
@@ -1954,21 +1955,24 @@ button {
         .modal-hero-item_img::after {
           content: none; } }
     .modal-hero-item_img--sterh {
-      width: 54px;
+      width: 100%;
       height: 74px;
-      background-image: url("./images/awards-sterh.png"); }
+      background-image: url("./images/awards-sterh.png");
+      background-position-x: 52.5%; }
       @media (min-width: 75em) {
         .modal-hero-item_img--sterh {
-          width: 138px;
-          height: 194px; } }
+          height: 194px;
+          background-position-x: 60%; } }
     .modal-hero-item_img--runet {
-      width: 60px;
+      width: 100px;
       height: 74px;
-      background-image: url("./images/awards-runet.png"); }
+      background-image: url("./images/awards-runet.png");
+      background-position-x: 34px; }
       @media (min-width: 75em) {
         .modal-hero-item_img--runet {
-          width: 132px;
-          height: 164px; } }
+          width: 100%;
+          height: 164px;
+          background-position-x: 65%; } }
   .modal-hero-item_list {
     max-height: 0;
     color: #fff;
@@ -2045,6 +2049,9 @@ button {
       font-size: 12px;
       line-height: 14px;
       font-weight: 500; } }
+  @media (min-width: 75em) {
+    .modal-hero-subitem:last-child {
+      margin-bottom: 0; } }
   .modal-hero-subitem_img {
     margin: 0 auto;
     margin-bottom: 20px !important;
@@ -2067,7 +2074,7 @@ button {
       background-image: url("./images/awards-young.png"); }
       @media (min-width: 75em) {
         .modal-hero-subitem_img--young {
-          width: 152px;
+          width: 252px;
           height: 72px; } }
     .modal-hero-subitem_img--khv {
       width: 52px;
