@@ -1853,7 +1853,8 @@ button {
         transform: translate3d(-50%, -50%, 0);
         padding-top: 60px;
         padding-bottom: 60px;
-        background-color: rgba(20, 20, 20, 0.3); } }
+        background-color: rgba(20, 20, 20, 0.3);
+        overflow: hidden; } }
     @media (min-height: 900px) {
       .modal-hero_scroll-wrap {
         max-height: 730px; } }
