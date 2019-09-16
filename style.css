@@ -1978,8 +1978,7 @@ button {
     overflow: hidden; }
     @media (min-width: 75em) {
       .modal-hero-item_list {
-        max-height: 100%;
-        margin-bottom: 50px; } }
+        max-height: 100%; } }
     .modal-hero-item_list li {
       position: relative;
       margin-bottom: 26px;
@@ -1987,6 +1986,9 @@ button {
       @media (min-width: 75em) {
         .modal-hero-item_list li {
           margin-bottom: 40px; } }
+      @media (min-width: 75em) {
+        .modal-hero-item_list li:last-child {
+          margin-bottom: 0; } }
       .modal-hero-item_list li:last-child::after {
         content: none; }
       .modal-hero-item_list li::after {
