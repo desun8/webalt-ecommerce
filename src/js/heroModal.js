@@ -1,6 +1,7 @@
 import { TweenLite, TimelineLite } from "gsap";
 // import { enableBodyScroll, disableBodyScroll } from "body-scroll-lock";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
+import "./jquery.confetti";
 
 (() => {
   document.addEventListener("DOMContentLoaded", () => {
@@ -8,6 +9,7 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
     const mainHero = _$(".hero");
     const hero = _$(".hero_wrap");
     const modal = _$("#modalHero");
+    const modalScrollContent = modal.querySelector(".modal-hero_scroll-wrap");
     const btnClose = modal.querySelector("#modalHeroClose");
     const btnOpen = _$("#showHeroModal");
 
@@ -23,7 +25,12 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
         .to(nav, 0.6, { autoAlpha: 0 }, "first")
         .to(mainHero, 0.6, { y: top }, "last")
         .to(modal, 0.6, { x: "0%" }, "last");
-      disablePageScroll();
+
+      disablePageScroll(isDesktop ? null : modalScrollContent);
+
+      if (isDesktop) {
+        $.confetti.restart();
+      }
     });
 
     // Закрытие модалки
@@ -34,7 +41,12 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
         .to(mainHero, 0.6, { y: 0 }, "first")
         .to(hero, 0.6, { autoAlpha: 1 }, "last")
         .to(nav, 0.6, { autoAlpha: 1 }, "last");
-      enablePageScroll();
+
+      enablePageScroll(isDesktop ? null : modalScrollContent);
+
+      if (isDesktop) {
+        $.confetti.stop();
+      }
     });
 
     // Раскрытие спойлеров

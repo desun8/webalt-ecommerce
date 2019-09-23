@@ -71,7 +71,11 @@
         <span class="custom-checkbox_checkmark"></span>
       </label>
 
-      <div class="notRobot"></div>
+      <!-- <div class="notRobot">
+        {!! app('captcha')->display($attributes = ['id' => 'recap1'], $lang =
+        'ru'); !!}
+      </div> -->
+
       <button id="modalFormSubmit" class="btn  btn--orange" type="submit">
         Отправить
       </button>
@@ -84,7 +88,6 @@
     <a href="#">
       <img src="./img/logo-full.png" alt="web alternative" />
     </a>
-    <!-- <button id="modalOkClose" class="modal_close" type="button">Закрыть</button> -->
   </div>
 
   <div class="modal_submit">

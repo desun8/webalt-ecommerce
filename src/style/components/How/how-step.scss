@@ -85,11 +85,15 @@
 
       .how-step_text {
         .name {
-          display: none;
+          @media (--desktop1200) {
+            display: none;
+          }
         }
 
         .more {
-          display: inline;
+          @media (--desktop1200) {
+            display: inline;
+          }
         }
       }
     }

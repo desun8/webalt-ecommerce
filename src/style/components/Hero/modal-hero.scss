@@ -11,6 +11,7 @@
 
   @media (--desktop1200) {
     background-color: rgba(0, 0, 0, 0.7);
+    // overflow: hidden;
   }
 
   &_scroll-wrap {
@@ -34,10 +35,11 @@
       padding-top: 60px;
       padding-bottom: 60px;
       background-color: rgba(20, 20, 20, 0.3);
+      overflow: hidden;
     }
 
     @media (min-height: 900px) {
-      max-height: 730px;
+      max-height: 790px;
     }
   }
 }
@@ -137,6 +139,7 @@
 
     @media (--desktop1200) {
       order: 2;
+      justify-content: center;
     }
   }
 
@@ -180,24 +183,31 @@
     }
 
     &--sterh {
-      width: 54px;
+      // width: 54px;
+      width: 100%;
       height: 74px;
       background-image: url("./images/awards-sterh.png");
+      background-position-x: 52.5%;
 
       @media (--desktop1200) {
-        width: 138px;
+        // width: 138px;
         height: 194px;
+        background-position-x: 60%;
       }
     }
 
     &--runet {
-      width: 60px;
+      // width: 60px;
+      width: 100px;
       height: 74px;
       background-image: url("./images/awards-runet.png");
+      background-position-x: 34px;
 
       @media (--desktop1200) {
-        width: 132px;
+        // width: 132px;
+        width: 100%;
         height: 164px;
+        background-position-x: 65%;
       }
     }
   }
@@ -214,7 +224,8 @@
 
     @media (--desktop1200) {
       max-height: 100%;
-      margin-bottom: 50px;
+      // margin-bottom: 50px;
+
     }
 
     li {
@@ -227,6 +238,11 @@
       }
 
       &:last-child {
+
+        @media (--desktop1200) {
+          margin-bottom: 0;
+        }
+
         &::after {
           content: none;
         }
@@ -316,6 +332,12 @@
     font-weight: 500;
   }
 
+  &:last-child {
+    @media (--desktop1200) {
+      margin-bottom: 0;
+    }
+  }
+
   &_img {
     margin: 0 auto;
     margin-bottom: 20px !important;
@@ -344,7 +366,7 @@
       background-image: url("./images/awards-young.png");
 
       @media (--desktop1200) {
-        width: 152px;
+        width: 252px;
         height: 72px;
       }
     }

@@ -18,6 +18,8 @@ import $ from "jquery";
         margin: 40,
         autoWidth: true,
         smartSpeed: 1000,
+        // autoplay: true,
+        autoplayTimeout: 3500,
       });
 
       $(".advantage-btn--next").click(() => {
@@ -27,6 +29,17 @@ import $ from "jquery";
       $(".advantage-btn--prev").click(() => {
         owl.trigger("prev.owl.carousel");
       });
+
+      const observer = new IntersectionObserver(
+        entries => {
+          if (entries[0].isIntersecting === true) {
+            owl.trigger("play.owl.autoplay");
+          }
+        },
+        { threshold: [0.2] },
+      );
+
+      observer.observe(owl[0]);
     }
 
     const owlClients = $(".clients-slider");

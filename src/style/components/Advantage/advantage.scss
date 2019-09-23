@@ -63,6 +63,11 @@
 
   .owl-stage-outer {
     overflow: visible;
+    margin-bottom: 0;
+  }
+
+  .owl-item {
+    padding-top: 25px;
   }
 }
 
@@ -130,7 +135,7 @@
     }
 
     @media (--desktop1500) {
-      bottom: 35.4%;
+      bottom: 25%;
     }
   }
 

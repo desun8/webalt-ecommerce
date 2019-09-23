@@ -183,6 +183,8 @@ import { throttle } from "lodash";
       };
 
       const eventMouseAnimation = throttle(e => {
+        if (!e.currentTarget) return null;
+
         const bgIcons = e.currentTarget.querySelectorAll(".bg-icon");
 
         const xPos = e.clientX / window.innerWidth - 0.5;
@@ -201,6 +203,8 @@ import { throttle } from "lodash";
             ".template_bg-icon",
           );
 
+          const line = e.currentTarget.querySelector(".template-divide_line");
+
           templateIcons.forEach(icon => {
             TweenLite.to(icon, 1.2, {
               x: xPos * 15,
@@ -208,8 +212,35 @@ import { throttle } from "lodash";
               ease: Power1.easeOut,
             });
           });
+
+          TweenLite.to(line, 1.2, {
+            x: `${(xPos * 15 + 50) * -1}%`,
+            y: `${(yPos * 15 + 50) * -1}%`,
+            ease: Power1.easeOut,
+          });
         }
       }, 100);
+
+      const templateTitleHover = throttle(e => {
+        const temp1 = document
+          .querySelector(".template[data-name='1']")
+          .querySelector(".template_title");
+        const temp2 = document
+          .querySelector(".template[data-name='2']")
+          .querySelector(".template_title");
+
+        const posX = e.clientX;
+        const width = window.innerWidth;
+        const half = width / 2;
+
+        if (posX < half) {
+          temp1.classList.add("template_title--orange");
+          temp2.classList.remove("template_title--orange");
+        } else {
+          temp2.classList.add("template_title--orange");
+          temp1.classList.remove("template_title--orange");
+        }
+      }, 400);
 
       const fullPageInstance = new fullpage("#fullPage", {
         licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
@@ -271,6 +302,8 @@ import { throttle } from "lodash";
 
           if (destination.item.id === "sectionTemplates") {
             destination.item.addEventListener("mousemove", eventMouseAnimation);
+
+            destination.item.addEventListener("mousemove", templateTitleHover);
           }
 
           if (destination.item.id === "sectionClients") {

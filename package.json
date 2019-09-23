@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "epchela",
+  "homepage": "https://epchela.github.io/webalt-ecommerce/",
   "license": "MIT",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
@@ -18,6 +22,7 @@
     "eslint-plugin-react": "^7.14.2",
     "fs-extra": "^8.1.0",
     "fullpage.js": "^3.0.7",
+    "gh-pages": "^2.1.1",
     "gsap": "^2.1.3",
     "gulp": "^4.0.2",
     "gulp-file-include": "^2.0.1",
@@ -29,6 +34,7 @@
     "gulp-svg-sprite": "^1.5.0",
     "gulp-uglify": "^3.0.2",
     "imagemin-pngquant": "^8.0.0",
+    "imask": "^5.2.1",
     "jpegtran-bin": "^4.0.0",
     "jquery": "^3.4.1",
     "lodash": "^4.17.11",

@@ -1,5 +1,6 @@
 import { enableBodyScroll, disableBodyScroll } from "body-scroll-lock";
 import SimpleBar from "simplebar";
+import { throttle } from "lodash";
 
 (() => {
   document.addEventListener("DOMContentLoaded", () => {
@@ -18,36 +19,41 @@ import SimpleBar from "simplebar";
       // При ховере на карточку (кейс)
       // Только для десктопа
       if (isDesktop) {
-        card.addEventListener("mouseenter", () => {
-          if (!allowHover) return;
+        card.addEventListener(
+          "mousemove",
+          throttle(() => {
+            if (!allowHover) return;
 
-          cards.forEach(item => {
-            if (card !== item) {
-              item.classList.add("is-blur");
-            }
-          });
+            cards.forEach(item => {
+              if (card !== item) {
+                item.classList.add("is-blur");
+              }
+            });
 
-          modalItems.forEach(item => {
-            if (item.dataset.name === card.dataset.name) {
-              item.classList.add("is-active");
-              // modalWrap.classList.add("is-active");
+            modalItems.forEach(item => {
+              if (item.dataset.name === card.dataset.name) {
+                item.classList.add("is-active");
 
-              modalWrap.classList.add("is-hover--pre");
-              // setTimeout(() => modalWrap.classList.add("is-hover"), 200);
-              modalWrap.classList.add("is-hover");
-            } else {
-              item.classList.remove("is-active");
-            }
-          });
-        });
+                modalWrap.classList.add("is-hover--pre");
+                modalWrap.classList.add("is-hover");
+              } else {
+                item.classList.remove("is-active");
+              }
+            });
+          }, 200),
+        );
 
         card.addEventListener("mouseleave", () => {
+          allowHover = false;
+
           cards.forEach(item => {
             item.classList.remove("is-blur");
           });
 
           modalWrap.classList.remove("is-hover");
-          // setTimeout(() => modalWrap.classList.remove("is-hover--pre"), 400);
+          setTimeout(() => {
+            allowHover = true;
+          }, 200);
         });
       }
 

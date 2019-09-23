@@ -22,7 +22,7 @@
   }
 
   &--result {
-    @media (--mobile) {
+    @media (--mobileOnly) {
       align-items: flex-start;
     }
   }
