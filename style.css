@@ -2149,7 +2149,10 @@ button {
     margin-left: 288px;
     transform: translateY(4px); }
   .advantage .owl-stage-outer {
-    overflow: visible; }
+    overflow: visible;
+    margin-bottom: 0; }
+  .advantage .owl-item {
+    padding-top: 25px; }
 
 .advantage-btn {
   display: flex;
@@ -2194,7 +2197,7 @@ button {
       left: 26.6%; } }
   @media (min-width: 93.75em) {
     .advantage-list::before {
-      bottom: 35.4%; } }
+      bottom: 25%; } }
 
 .advantage-list_item {
   position: relative;
