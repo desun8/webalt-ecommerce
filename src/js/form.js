@@ -5,6 +5,7 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
   document.addEventListener("DOMContentLoaded", () => {
     const formFeedback = _$("#mainFeedbackForm");
     const modalFeedback = _$("#modalFeedback");
+    const btnHeaderOpenModal = _$("#headerPhoneModal");
     const btnHeroOpenModal = _$("#js-heroBtn");
     const btnOpenModal = _$("#showModalForm");
     const btnCloseModal = _$("#modalFeedbackClose");
@@ -13,6 +14,8 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
     const modalOk = _$("#modalOk");
 
     const sampleBlock = _$(".sample_blur-wrap");
+
+    const feebackActionUrl = formFeedback.action || "/feedback-lp/ecommercelp";
 
     const showSuccessMessage = () => {
       disablePageScroll();
@@ -44,7 +47,7 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
     };
 
     // Открытие/закрытие модальной формы
-    [btnHeroOpenModal, btnOpenModal].forEach(btn => {
+    [btnHeaderOpenModal, btnHeroOpenModal, btnOpenModal].forEach(btn => {
       btn.addEventListener("click", () => {
         if (isDesktop) {
           sampleBlock.classList.add("is-blur");
@@ -89,7 +92,7 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
       ) {
         const formData = new FormData(e.currentTarget);
 
-        fetch("/cart/registration", {
+        fetch(feebackActionUrl, {
           method: "POST",
           mode: "no-cors",
           body: formData,
@@ -124,8 +127,7 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
         phone.classList.remove("error");
       }
 
-      
-      // grecaptcha.getResponse() 
+      // grecaptcha.getResponse()
       if (
         name.value &&
         phone.value.length === 18 &&
@@ -134,7 +136,7 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
       ) {
         const formData = new FormData(modalFeedbackForm);
 
-        fetch("/cart/registration", {
+        fetch(feebackActionUrl, {
           method: "POST",
           mode: "no-cors",
           // headers: myHeaders,

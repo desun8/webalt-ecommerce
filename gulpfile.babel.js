@@ -354,11 +354,7 @@ function imageMin(done) {
 function svgNoStyle(done) {
   gulp
     .src(paths.img.svgNoStyle)
-    .pipe(
-      imgMin([
-        imgMin.svgo(svgoParamsClearStyle),
-      ]),
-    )
+    .pipe(imgMin([imgMin.svgo(svgoParamsClearStyle)]))
     .pipe(gulp.dest(paths.img.dest));
   done();
 }
@@ -450,5 +446,7 @@ export { svgNoStyle as svgclear };
 export { spriteSvg as spritesvg };
 
 const def = gulp.parallel(watch, serve);
+const build = gulp.parallel(htmlInclude, makeStyle, jsBuild);
 
+export { build };
 export default def;
