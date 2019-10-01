@@ -95,6 +95,12 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
         fetch(feebackActionUrl, {
           method: "POST",
           mode: "no-cors",
+          credentials: "same-origin",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            "X-Requested-With": "XMLHttpRequest",
+          },
           body: formData,
         })
           .then(res => {
@@ -139,7 +145,12 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
         fetch(feebackActionUrl, {
           method: "POST",
           mode: "no-cors",
-          // headers: myHeaders,
+          credentials: "same-origin",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            "X-Requested-With": "XMLHttpRequest",
+          },
           body: formData,
         })
           .then(res => {
