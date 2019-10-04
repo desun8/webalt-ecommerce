@@ -102,7 +102,7 @@ import { throttle } from "lodash";
 
     modalClose.addEventListener("click", closeModal);
     modalWrap.addEventListener("click", e => {
-      if (e.target === e.currentTarget) {
+      if (e.target.classList.contains("simplebar-content")) {
         closeModal();
       }
     });
