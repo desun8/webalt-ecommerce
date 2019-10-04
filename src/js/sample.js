@@ -58,11 +58,12 @@ import { throttle } from "lodash";
       }
 
       card.addEventListener("click", () => {
-        disableBodyScroll(modalWrap);
+        disableBodyScroll(isDesktop ? modalWrap : modalWrapScroll);
 
         if (isDesktop) {
           allowHover = false;
 
+          // modalWrapScroll.style.right = "0";
           modalWrap.classList.remove("is-hover");
           modalWrap.classList.remove("is-hover--pre");
         }
@@ -86,9 +87,12 @@ import { throttle } from "lodash";
       modalWrap.classList.remove("is-active");
 
       if (isDesktop) {
-        blurWrap.classList.remove("is-blur");
+        allowHover = false;
 
+        blurWrap.classList.remove("is-blur");
+        
         setTimeout(() => {
+          // modalWrapScroll.style.right = null;
           allowHover = true;
         }, 500);
 
@@ -97,12 +101,12 @@ import { throttle } from "lodash";
         }
       }
 
-      enableBodyScroll(modalWrap);
+      enableBodyScroll(isDesktop ? modalWrap : modalWrapScroll);
     };
 
     modalClose.addEventListener("click", closeModal);
     modalWrap.addEventListener("click", e => {
-      if (e.target.classList.contains("simplebar-content")) {
+      if (e.target === e.currentTarget) {
         closeModal();
       }
     });
@@ -118,8 +122,8 @@ import { throttle } from "lodash";
     // Custom scrollBar
     if (isDesktop) {
       // modal-sample_content
-      // new SimpleBar(modalWrapScroll, { autoHide: false });
-      new SimpleBar(modalWrap, { autoHide: false, scrollbarMinSize: 1 });
+      new SimpleBar(modalWrapScroll, { autoHide: false });
+      // new SimpleBar(modalWrap, { autoHide: false, scrollbarMinSize: 1 });
 
       // Array.from(_$$(".modal-sample_content")).forEach(
       //   el =>
