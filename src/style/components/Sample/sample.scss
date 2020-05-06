@@ -1,23 +1,23 @@
 .sample {
   // padding: 40px 0;
-  background-color: $mainBg;
+  // background-color: $mainBg;
 
   &_blur-wrap {
     padding-bottom: 80px;
-    background-image: url("./images/bg-sample.png");
+    background-image: url('../images/bg-sample.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 200% 115%;
 
-    @media (--desktop1200) {
-      @include flex-center;
-      @include trans;
+    @media (--desktop) {
+      // @include flex-center;
+      // @include trans;
 
       padding: 0;
       height: 100vh;
       background-color: rgba(33, 33, 33, 0);
       background-size: cover;
-      background-image: url("./images/bg-sample-desk.png");
+      background-image: url('../images/bg-sample-lg.png');
       filter: blur(0);
       will-change: filter;
     }
@@ -29,11 +29,11 @@
   }
 
   &_wrap {
-    @extend %wrap-wide;
+    // @extend %wrap-wide;
     // max-width: 1110px;
 
-    @media (--desktop1200) {
-      @include flex-center;
+    @media (--desktop) {
+      // @include flex-center;
 
       flex-direction: column;
       width: 100%;
@@ -48,7 +48,7 @@
     font-weight: normal;
     text-transform: uppercase;
 
-    @media (--desktop1200) {
+    @media (--desktop) {
       width: 100%;
       margin-bottom: 120px * 0.8;
       font-size: 42px;
@@ -56,190 +56,192 @@
       text-align: center;
     }
 
-    @media (--desktop1500) {
+    @media (--desktop-lg) {
       margin-bottom: 120px;
     }
   }
 }
 
 .sample-list {
-  @extend %list-unstyled;
+  // @extend %list-unstyled;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
-  @media (--desktop1200) {
+  @media (--desktop) {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-bottom: 40px;
   }
 
-  @media (--desktop1500) {
+  @media (--desktop-lg) {
     margin-bottom: 85px;
   }
 
   &_item {
     margin-bottom: 40px;
 
-    @media (--desktop1200) {
+    @media (--desktop) {
       margin-bottom: 0;
     }
   }
 }
 
-.modal-item {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  height: 205px;
-  margin-bottom: 40px;
-  padding: 34px 21px;
-  background:
-    linear-gradient(156.01deg, #8d5dcc -128.51%, #55329e 221.38%);
-  box-shadow: 0 5px 10px rgba(94, 56, 158, 0.35);
-  border-radius: 3px;
+// .modal-item {
+//   position: relative;
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+//   align-items: center;
+//   height: 205px;
+//   margin-bottom: 40px;
+//   padding: 34px 21px;
+//   background: linear-gradient(156.01deg, #8d5dcc -128.51%, #55329e 221.38%);
+//   box-shadow: 0 5px 10px rgba(94, 56, 158, 0.35);
+//   border-radius: 3px;
 
-  @media (--desktop1200) {
-    width: 990px;
-    margin: 0;
-    padding: 0;
-    padding-left: 30px;
-    height: auto;
-    background: #50386f;
-    border-radius: 0;
-  }
+//   @media (--desktop) {
+//     width: 990px;
+//     margin: 0;
+//     padding: 0;
+//     padding-left: 30px;
+//     height: auto;
+//     background: #50386f;
+//     border-radius: 0;
+//   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 71.5%;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.1);
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     bottom: -40px;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     width: 71.5%;
+//     height: 1px;
+//     background-color: rgba(255, 255, 255, 0.1);
 
-    @media (--desktop1200) {
-      content: none;
-    }
-  }
+//     @media (--desktop) {
+//       content: none;
+//     }
+//   }
 
-  &_icon,
-  &_text,
-  &_btn {
-    position: relative;
-    z-index: 5;
-  }
+//   &_icon,
+//   &_text,
+//   &_btn {
+//     position: relative;
+//     z-index: 5;
+//   }
 
-  &_icon,
-  &_text {
-    flex: 1 0 5em;
-  }
+//   &_icon,
+//   &_text {
+//     flex: 1 0 5em;
+//   }
 
-  &_icon {
-    flex-basis: auto;
-    width: 43px;
-    height: 43px;
-    background-image: url(./images/icon-love.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
+//   &_icon {
+//     flex-basis: auto;
+//     width: 43px;
+//     height: 43px;
+//     background-image: url(./images/icon-love.svg);
+//     background-repeat: no-repeat;
+//     background-size: contain;
 
-    @media (--desktop1200) {
-      display: none;
-    }
-  }
+//     @media (--desktop1200) {
+//       display: none;
+//     }
+//   }
 
-  &_text,
-  &_btn {
-    color: #fff;
-    font-weight: 700;
+//   &_text,
+//   &_btn {
+//     color: #fff;
+//     font-weight: 700;
 
-    @media (--desktop1200) {
-      font-size: 18px !important;
-      line-height: 22px !important;
-      font-weight: 400;
-    }
-  }
+//     @media (--desktop1200) {
+//       font-size: 18px !important;
+//       line-height: 22px !important;
+//       font-weight: 400;
+//     }
+//   }
 
-  &_text {
-    flex-grow: 6;
-    font-size: 11px;
-    line-height: 13px;
+//   &_text {
+//     flex-grow: 6;
+//     font-size: 11px;
+//     line-height: 13px;
 
-    @media (--desktop1200) {
-      flex-grow: 1;
-    }
-  }
+//     @media (--desktop1200) {
+//       flex-grow: 1;
+//     }
+//   }
 
-  &_btn {
-    @extend %flex-center;
+//   &_btn {
+//     @extend %flex-center;
 
-    flex-basis: 100%;
-    align-self: flex-end;
-    height: 46px;
-    background-color: transparent;
-    font-size: 13px;
-    line-height: 16px;
-    border: 3px solid #fff;
-    border-radius: 5px;
+//     flex-basis: 100%;
+//     align-self: flex-end;
+//     height: 46px;
+//     background-color: transparent;
+//     font-size: 13px;
+//     line-height: 16px;
+//     border: 3px solid #fff;
+//     border-radius: 5px;
 
-    @media (--desktop1200) {
-      @include trans-slow;
+//     @media (--desktop1200) {
+//       @include trans-slow;
 
-      flex-basis: auto;
-      display: flex;
-      align-items: center;
-      width: 240px;
-      height: auto;
-      padding-top: 22px;
-      padding-bottom: 22px;
-      padding-left: 25px;
-      padding-right: 62px;
-      background: linear-gradient(170.25deg, #8d5dcc -128.51%, #55329e 221.38%);
-      box-shadow: 0 5px 10px rgba(94, 56, 158, 0.35);
-      border: 0;
-      border-radius: 0;
-    }
+//       flex-basis: auto;
+//       display: flex;
+//       align-items: center;
+//       width: 240px;
+//       height: auto;
+//       padding-top: 22px;
+//       padding-bottom: 22px;
+//       padding-left: 25px;
+//       padding-right: 62px;
+//       background: linear-gradient(170.25deg, #8d5dcc -128.51%, #55329e 221.38%);
+//       box-shadow: 0 5px 10px rgba(94, 56, 158, 0.35);
+//       border: 0;
+//       border-radius: 0;
+//     }
 
-    &::after {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      width: 20px;
-      height: 100%;
-      background-image: url("./images/icon-arrow-top-right.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
+//     &::after {
+//       position: absolute;
+//       top: 0;
+//       right: 25px;
+//       width: 20px;
+//       height: 100%;
+//       background-image: url('./images/icon-arrow-top-right.svg');
+//       background-repeat: no-repeat;
+//       background-position: center;
+//       background-size: contain;
 
-      @media (--desktop1200) {
-        content: "";
-      }
-    }
+//       @media (--desktop1200) {
+//         content: '';
+//       }
+//     }
 
-    &:hover {
-      @media (--desktop1200) {
-        background: linear-gradient(170.25deg, darken(#8d5dcc, 5%) -128.51%, darken(#55329e, 5%) 221.38%);
-      }
-    }
-  }
+//     &:hover {
+//       @media (--desktop1200) {
+//         background: linear-gradient(170.25deg, darken(#8d5dcc, 5%) -128.51%, darken(#55329e, 5%) 221.38%);
+//       }
+//     }
+//   }
 
-  &_bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(./images/icon-love.svg);
-    background-repeat: no-repeat;
-    background-size: 170px;
-    background-position: 90% 100%;
-    transform: rotate3d(0, 0, 1, -15deg);
-    z-index: 1;
-    opacity: 0.03;
+//   &_bg {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-image: url(./images/icon-love.svg);
+//     background-repeat: no-repeat;
+//     background-size: 170px;
+//     background-position: 90% 100%;
+//     transform: rotate3d(0, 0, 1, -15deg);
+//     z-index: 1;
+//     opacity: 0.03;
 
-    @media (--desktop1200) {
-      display: none;
-    }
-  }
-}
+//     @media (--desktop1200) {
+//       display: none;
+//     }
+//   }
+// }

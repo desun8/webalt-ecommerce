@@ -1,0 +1,26 @@
+$default-font-size: 10;
+$default-viewport: 375;
+$desktop-viewport: 1920;
+$default-viewport-height: 960;
+
+@function em($px, $font-size: $default-font-size) {
+  // если высчитываем line-height от rem
+  @if $font-size != $default-font-size {
+    @return $px / $font-size * 1em;
+  }
+
+  @return $px / $default-font-size * 1em;
+}
+
+@function rem($px) {
+  @return $px / $default-font-size * 1rem;
+}
+
+@function vw($size, $viewport: $default-viewport) {
+  $vw: $viewport * 0.01;
+  @return $size / $vw * 1vw;
+}
+@function vh($size, $viewport: $default-viewport-height) {
+  $vh: $viewport * 0.01;
+  @return $size / $vh * 1vh;
+}

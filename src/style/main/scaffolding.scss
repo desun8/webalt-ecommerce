@@ -1,5 +1,9 @@
 :root {
   font-size: 62.5%; /* 10px */
+
+  @media (--desktop-height-sm) {
+    font-size: 50%;
+  }
 }
 
 *,
@@ -16,8 +20,8 @@ html {
 body {
   -webkit-overflow-scrolling: touch;
   min-height: 100%;
-  background-color: $mainBg;
-  font-family: var(--mainFont);
+  background-color: var(--main-bg-color);
+  font-family: var(--main-font);
   font-size: 100%;
   color: #fff;
 }
@@ -26,94 +30,16 @@ body {
   position: relative;
 }
 
-// .icon-arrow {
-//   /* @apply --trans; */
-
-//   position: absolute;
-//   width: 7px;
-//   height: 7px;
-//   top: 50%;
-//   right: -10px;
-//   transform: translate3d(0, -50%, 0);
-
-//   &::before,
-//   &::after {
-//     content: '';
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 7px;
-//     height: 1px;
-//     background-color: #d6d6d6;
-//     transform: rotate(45deg);
-//   }
-
-//   &::before {
-//     border-top-left-radius: 1px;
-//     border-bottom-left-radius: 1px;
-//     border-top-right-radius: 1px;
-//   }
-
-//   &::after {
-//     top: auto;
-//     bottom: 2px;
-//     transform: rotate(-45deg);
-//     border-top-left-radius: 1px;
-//     border-bottom-left-radius: 1px;
-//     border-bottom-right-radius: 1px;
-//   }
-
-//   /* &--left {
-//     transform: translate3d(0, -50%, 0) rotate(180deg);
-//   }
-
-//   &--right {
-//     transform: translate3d(0, -50%, 0) rotate(180deg);
-//   }
-
-//   &--down {
-//     transform: translate3d(0, -50%, 0) rotate(90deg);
-//   }
-
-//   &--up {
-//     transform: translate3d(0, -50%, 0) rotate(-90deg);
-//   } */
-// }
-
-/* .wrap {
-  @apply --wrap;
-}
-
-.list-unstyled {
-  @apply --list-unstyled;
-} */
-
-
 /* Специальные классы */
 
-.only-desktop {
-  @media (--tabletMin) {
-    display: none !important;
-  }
-}
+// .only-desktop {
+//   @media (--tabletMin) {
+//     display: none !important;
+//   }
+// }
 
-.only-mobile {
-  @media (--notTablet) {
-    display: none !important;
-  }
-}
-
-/* .noScroll {
-  height: 100%;
-  overflow: hidden;
-} */
-
-/* .jsHide {
-  display: none;
-} */
-
-// .hideMobile {
-//   @media (--mobile) {
-//     display: none;
+// .only-mobile {
+//   @media (--notTablet) {
+//     display: none !important;
 //   }
 // }

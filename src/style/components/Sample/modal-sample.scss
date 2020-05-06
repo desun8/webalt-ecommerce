@@ -1,5 +1,5 @@
 .modal-sample-wrap {
-  @extend %trans-slow;
+  // @extend %trans-slow;
 
   position: fixed;
   top: 0;
@@ -15,7 +15,7 @@
   transition-property: transform;
   z-index: 500;
 
-  @media (--desktop1200) {
+  @media (--desktop) {
     display: flex;
     justify-content: flex-end;
     
@@ -26,7 +26,7 @@
     transform: translateX(100%) scale(0.7);
   }
 
-  @media (--desktop1500) {
+  @media (--desktop-lg) {
     transform: translateX(100%) scale(0.75);
   }
 
@@ -40,13 +40,13 @@
     box-shadow: -14px 0 28px rgba(0, 0, 0, 0.3);
     justify-content: flex-start;
 
-    @media (--desktop1500) {
+    @media (--desktop-lg) {
       transform: translateX(75%) scale(0.75);
     }
 
     &--pre {
       .simplebar-content {
-        @media (--desktop1200) {
+        @media (--desktop) {
           justify-content: flex-start;
         }
       }
@@ -85,20 +85,20 @@
     background-color: #212121;
 
 
-    @media (--tabletMin) {
+    @media (--tablet) {
       left: 0;
       min-height: 100vh;
       overflow-y: scroll;
     }
 
-    @media (--desktop1200) {
+    @media (--desktop) {
       width: 45%;
       padding-top: 0;
     }
   }
 
   .simplebar-content {
-    @media (--desktop1200) {
+    @media (--desktop) {
       display: flex;
       justify-content: flex-end;
     }
@@ -115,7 +115,7 @@
 }
 
 .modal-sample-close {
-  @extend %trans;
+  // @extend %trans;
 
   position: absolute;
   top: 10px;
@@ -128,9 +128,9 @@
 
   &::before,
   &::after {
-    @extend %trans;
+    // @extend %trans;
 
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -139,7 +139,7 @@
     background-color: #c4c4c4;
     transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, -45deg);
 
-    @media (--desktop1200) {
+    @media (--desktop) {
       width: 4px;
       height: 44px;
     }
@@ -150,10 +150,9 @@
   }
 
   &:hover {
-
     &::before,
     &::after {
-      @media (--desktop1200) {
+      @media (--desktop) {
         background-color: rgba(255, 255, 255, 1);
       }
     }
@@ -167,7 +166,7 @@
   height: 100%;
   background-color: #212121;
 
-  @media (--desktop1200) {
+  @media (--desktop) {
     // width: 45%;
     width: 100%;
     height: 100vh;
@@ -205,7 +204,7 @@
     line-height: 26px;
     font-weight: 700;
 
-    @media (--desktop1200) {
+    @media (--desktop) {
       margin-bottom: 26px;
       padding: 0;
       font-size: 35px;
@@ -225,19 +224,19 @@
     font-size: 14px;
     line-height: 16px;
     background-color: #3e3e3e;
-    background-image: url("./images/icon-fullscreen.svg");
+    background-image: url('../images/icon-fullscreen.svg');
     background-repeat: no-repeat;
     background-position-x: 10px;
     background-position-y: center;
     background-size: 15px;
     border-radius: 3px;
 
-    @media (--desktop1200) {
+    @media (--desktop) {
       display: flex;
     }
 
     &:hover {
-      @extend %trans-slow;
+      // @extend %trans-slow;
 
       background-color: darken(#3e3e3e, 5%);
     }

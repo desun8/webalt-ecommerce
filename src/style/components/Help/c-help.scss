@@ -1,0 +1,60 @@
+@use '../../config' as c;
+
+.c-help {
+  // @include c.bg-img('../images/bg-help-1.png', c.vw(250));
+  @include c.bg-img('../images/bg-help-1.png', cover);
+
+  margin-bottom: 3.5rem;
+
+  @media (--desktop) {
+    height: 100vh;
+    background-image: url('../images/bg-help-lg.png');
+  }
+}
+
+.c-help__wrap {
+  padding: 10em var(--wrap-padding) 0;
+
+  @media (--desktop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.c-help__title {
+  margin-bottom: 3rem;
+}
+
+.c-help__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 7rem;
+
+  @media (--desktop) {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  @media (--desktop-lg) {
+    justify-content: space-between;
+    max-width: 145.4rem;
+  }
+}
+
+.c-help__card {
+  margin-bottom: 2rem;
+
+  @media (--desktop) {
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

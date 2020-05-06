@@ -1,5 +1,5 @@
 .custom-checkbox {
-  @extend %trans;
+  // @extend %trans;
 
   position: relative;
   display: block;
@@ -30,9 +30,9 @@
     transform: translate3d(0, -50%, 0);
 
     &::after {
-      @extend %trans;
+      // @extend %trans;
 
-      content: "";
+      content: '';
       position: absolute;
       visibility: hidden;
       opacity: 0;

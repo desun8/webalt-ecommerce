@@ -1,5 +1,5 @@
 .modal {
-  @extend %trans-slow;
+  // @extend %trans-slow;
 
   position: fixed;
   display: flex;
@@ -22,7 +22,7 @@
   }
 
   &--result {
-    @media (--mobileOnly) {
+    @media (--only-mobile) {
       align-items: flex-start;
     }
   }
@@ -49,7 +49,7 @@
     align-items: center;
     padding: 0 20px;
 
-    @media (--desktop1200) {
+    @media (--desktop) {
       flex-direction: column;
       padding-top: 50px;
     }
@@ -65,7 +65,7 @@
     align-items: center;
     padding: 10px 20px;
 
-    @media (--desktop1200) {
+    @media (--desktop) {
       padding: 30px 45px;
     }
 
@@ -75,7 +75,7 @@
   }
 
   &_close {
-    @extend %trans;
+    // @extend %trans;
 
     position: relative;
     padding-right: 30px;
@@ -88,7 +88,7 @@
 
     &::before,
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 50%;
       right: 8px;
@@ -103,7 +103,7 @@
     }
 
     &:hover {
-      @media (--notTablet) {
+      @media (--desktop) {
         color: rgba(255, 255, 255, 0.8);
       }
     }
@@ -114,7 +114,7 @@
     justify-content: center;
     align-items: center;
 
-    @media (--mobile) {
+    @media (--only-mobile) {
       flex-direction: column;
     }
   }
@@ -125,7 +125,7 @@
     font-weight: 300;
     margin-right: 15px;
 
-    @media (--mobile) {
+    @media (--only-mobile) {
       font-size: 22px;
       line-height: 28px;
       margin-right: 0;
@@ -145,8 +145,8 @@
   }
 
   .form-feedback {
-    @media (--desktop1200) {
-      @include flex-container;
+    @media (--desktop) {
+      // @include flex-container;
 
       flex-direction: row;
       justify-content: space-between;
@@ -154,13 +154,13 @@
     }
 
     &_message {
-      @media (--desktop1200) {
+      @media (--desktop) {
         height: 260px;
       }
     }
 
     &_agreements {
-      @media (--desktop1200) {
+      @media (--desktop) {
         margin-bottom: 30px;
         padding-left: 42px;
         color: #f6f6f6;
@@ -169,7 +169,7 @@
       }
 
       .custom-checkbox_checkmark {
-        @media (--desktop1200) {
+        @media (--desktop) {
           top: 50%;
           width: 36px;
           height: 36px;
@@ -177,7 +177,7 @@
         }
 
         &::after {
-          @media (--desktop1200) {
+          @media (--desktop) {
             left: 11px;
             top: 5px;
             width: 12px;
@@ -196,16 +196,16 @@
   }
 
   .btn {
-    @extend %trans-slow;
-    @extend %flex-center;
+    // @extend %trans-slow;
+    // @extend %flex-center;
 
     position: relative;
     width: 100%;
     padding: 18px;
     background:
       linear-gradient(191.18deg,
-        #7fb2ff -46.79%,
-        #a660ff 151.97%);
+      #7fb2ff -46.79%,
+      #a660ff 151.97%);
     color: #fff;
     font-size: 18px;
     line-height: 22px;
@@ -214,7 +214,7 @@
     border-radius: 5px;
     z-index: 5;
 
-    @media (--desktop1200) {
+    @media (--desktop) {
       max-width: 255px;
       padding: 18px 40px;
       font-size: 22px;
@@ -233,8 +233,8 @@
       height: 100%;
       background:
         linear-gradient(191.18deg,
-          #fff -46.79%,
-          #fff 151.97%);
+        #fff -46.79%,
+        #fff 151.97%);
       border-radius: 5px;
       z-index: 10;
       opacity: 0;
@@ -242,7 +242,7 @@
     }
 
     &:hover {
-      @media (--desktop1200) {
+      @media (--desktop) {
         color: #a660ff;
 
         &::after {
@@ -254,11 +254,11 @@
     &--orange {
       background:
         linear-gradient(151.35deg,
-          #de9b55 -8.73%,
-          #ee5432 93.23%);
+        #de9b55 -8.73%,
+        #ee5432 93.23%);
 
       &:hover {
-        @media (--desktop1200) {
+        @media (--desktop) {
           color: #fff;
           box-shadow: 0 4px 4px rgba(222, 155, 85, 0.3);
 

@@ -1,0 +1,68 @@
+@use '../../config' as c;
+
+.c-card {
+  --icon-size: 5.8rem;
+  --icon-mb: 1.5rem;
+
+  min-width: 23.4em;
+  min-height: 22.4em;
+  width: c.vw(234);
+  height: c.vw(224);
+  padding: c.vw(20) c.vw(25) 0;
+  background-color: rgba($color: #000, $alpha: 0.6);
+  border-radius: 5px;
+  text-align: center;
+
+  @media (--desktop) {
+    --icon-size: #{c.vw(114, 1920)}; // 11.4rem;
+    --icon-mb: #{c.vw(40, 1920)}; // 4rem;
+
+    width: c.vw(458, 1920);
+    height: c.vw(440, 1920);
+    padding: c.vw(40, 1920) c.vw(50, 1920) 0;
+  }
+}
+
+.c-card__icon {
+  // модификатор: путь изображения
+  $icons: ('2': '../images/icon-help-2.png', '3': '../images/icon-help-3.png', '4': '../images/icon-help-4.png','5': '../images/icon-help-5.png','6': '../images/icon-help-6.png',);
+
+  @include c.bg-img('../images/icon-help-1.png');
+
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin: 0 auto var(--icon-mb);
+
+  @each $index, $src in $icons {
+    &--#{$index} {
+      background-image: url($src);
+    }
+  }
+}
+
+.c-card__title {
+  @include c.font-size(10, 14);
+  
+  margin-bottom: c.em(15, 10);
+  text-transform: uppercase;
+
+  @media (--desktop) {
+    font-size: #{c.vw(22, 1920)};
+  }
+
+  @media (--desktop-lg) {
+    font-size: 2.2rem;
+  }
+}
+
+.c-card__desc {
+  @include c.font-size(9, 12);
+
+  @media (--desktop) {
+    font-size: #{c.vw(18, 1920)};
+  }
+
+  @media (--desktop-lg) {
+    font-size: 1.8rem;
+  }
+}

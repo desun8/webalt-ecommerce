@@ -1,5 +1,5 @@
 .sample-item {
-  @extend %trans-slow;
+  // @extend %trans-slow;
 
   position: relative;
   width: 100%;
@@ -10,7 +10,7 @@
   transition-duration: 600ms;
   cursor: pointer;
 
-  @media (--desktop1200) {
+  @media (--desktop) {
     width: 295px;
     height: 450px;
     margin-bottom: 20px;
@@ -19,13 +19,13 @@
     will-change: filter;
   }
 
-  @media (--desktop1400) {
+  @media (--desktop-md) {
     width: 330px;
     height: 500px;
   }
 
   &::after {
-    @extend %trans-slow;
+    // @extend %trans-slow;
 
     position: absolute;
     bottom: -18px;
@@ -40,8 +40,8 @@
     transition-duration: 600ms;
     // width: 100%;
 
-    @media (--desktop1200) {
-      content: "";
+    @media (--desktop) {
+      content: '';
     }
   }
 
@@ -58,25 +58,25 @@
 
   &--1 {
     .sample-item_img {
-      background-image: url("./images/sample-1.jpg");
+      background-image: url('../images/sample-1.jpg');
     }
   }
 
   &--2 {
     .sample-item_img {
-      background-image: url("./images/sample-2.jpg");
+      background-image: url('../images/sample-2.jpg');
     }
   }
 
   &--3 {
     .sample-item_img {
-      background-image: url("./images/sample-3.jpg");
+      background-image: url('../images/sample-3.jpg');
     }
   }
 
   &--4 {
     .sample-item_img {
-      background-image: url("./images/sample-4.jpg");
+      background-image: url('../images/sample-4.jpg');
     }
   }
 
@@ -88,7 +88,7 @@
     width: 100%;
     padding: 16px;
 
-    @media (--desktop1200) {
+    @media (--desktop) {
       padding: 20px;
     }
   }
@@ -102,19 +102,19 @@
     background-position: center;
     border-radius: 3px;
 
-    @media (--desktop1200) {
+    @media (--desktop) {
       position: relative;
       height: 320px;
       margin-bottom: 20px;
     }
 
-    @media (--desktop1400) {
+    @media (--desktop-md) {
       height: 366px;
     }
   }
 
   &_icon-click {
-    @extend %trans-slow;
+    // @extend %trans-slow;
 
     display: none;
 
@@ -133,16 +133,16 @@
     opacity: 0;
     transition-duration: 450ms;
 
-    @media (--desktop1200) {
+    @media (--desktop) {
       display: block;
-      background-image: url("./images/icon-click.png");
+      background-image: url('../images/icon-click.png');
     }
   }
 
   &_title,
   &_type {
     // TODO: шрифт
-    font-family: $roboto;
+    // font-family: $roboto;
     color: #fff;
   }
 
@@ -152,7 +152,7 @@
     line-height: 26px;
     font-weight: 500;
 
-    @media (--desktop1200) {
+    @media (--desktop) {
       margin-bottom: 10px;
       font-size: 26px;
       line-height: 30px;
@@ -165,7 +165,7 @@
     font-weight: 300;
     opacity: 0.8;
 
-    @media (--desktop1200) {
+    @media (--desktop) {
       font-size: 18px;
       line-height: 21px;
     }

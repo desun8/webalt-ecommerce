@@ -1,0 +1,72 @@
+@use '../config' as c;
+
+$padding: 30;
+// $width: c.vw(1126 + ($padding * 2));
+$width: (1126 + ($padding * 2)) * 1px;
+$padding-x: c.vw($padding);
+$col-n: 2,3;
+
+.l-grid {
+  --col: 1;
+  --gap: #{c.rem(30)};
+
+  width: 100%;
+  // padding-left: $padding-x;
+  // padding-right: $padding-x;
+
+  @each $col in $col-n {
+    &--col-#{$col} {
+      --col: #{$col};
+    }
+  }
+
+  &[class*=--col-] {
+    @media (--tablet) {
+      --col: 1;
+    }
+  }
+
+  &--inner {
+    .l-grid__wrap {
+      padding: 0;
+    }
+  }
+
+  // &--feedback {
+  //   background-color: var(--feedback-bg);
+  // }
+
+  &__wrap {
+    // display: flex;
+    // justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(var(--col), 1fr [col]);
+    column-gap: var(--gap);
+    grid-auto-flow: row;
+
+    max-width: $width;
+    margin: 0 auto;
+    padding-left: $padding-x;
+    padding-right: $padding-x;
+
+    @media (width < $width) {
+      max-width: 100%;
+    }
+
+    @media (--tablet) {
+      padding: 0 c.rem(30);
+    }
+  }
+}
+
+.gap-86 {
+  --gap: #{c.rem(86)};
+
+  @media (--tablet-lg) {
+    --gap: #{c.rem(30)};
+  }
+}
+
+.align-c {
+  align-items: center;
+}

@@ -1,0 +1,76 @@
+@use '../../config' as c;
+
+.why {
+  @include c.bg-img('../images/bg-why.png', 100% 100%);
+
+  padding-bottom: 3.5rem;
+
+  @media (--desktop) {
+    height: 100vh;
+    padding-bottom: 0;
+  }
+}
+
+.why__wrap {
+  padding: 8em var(--wrap-padding) 0;
+
+  @media (--desktop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding-top: c.vh(90);
+  }
+}
+
+.why__title {
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+
+  @media (--desktop) {
+    margin-bottom: 0;
+  }
+}
+
+.why__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+
+  @media (--desktop) {
+    max-width: 110rem;
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+.why__card {
+  margin-bottom: 5rem;
+
+  @media (--desktop) {
+    margin-bottom: 0;
+  }
+
+  &:nth-child(1),
+  &:nth-child(2),
+  &:nth-child(3) {
+    @media (--desktop), (--desktop-height-sm) {
+      margin-bottom: 2rem;
+    }
+
+    @media (--desktop-md) {
+      margin-bottom: c.vh(50);
+    }
+
+    @media (--desktop-lg) {
+      margin-bottom: c.vh(98);
+      margin-bottom: c.vh(70);
+    }
+
+    // @media (--desktop-height-sm) {
+    //   margin-bottom: 2rem;
+    // }
+  }
+}

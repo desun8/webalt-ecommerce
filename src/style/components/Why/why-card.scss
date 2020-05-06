@@ -1,0 +1,98 @@
+@use '../../config' as c;
+
+$list-width: 1100; // px
+
+.why-card {
+  --size-min: 14.2rem;
+  --size: #{c.vw(142)};
+  --icon-size-min: 13.6rem;
+  --icon-size: #{c.vw(136)};
+  --icon-bg-color: #1d1d1d;
+  --title-weight: 400;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // min-width: var(--size-min);
+  width: var(--size);
+
+  @media (--desktop) {
+    --size: calc(100% / 3);
+    --icon-size-min: 1rem;
+    --icon-size: 12rem;
+
+    padding: 0 1rem;
+  }
+
+  @media (--desktop-md) {
+    --icon-size: 18rem;
+  }
+
+  @media (--destop-lg) {
+    --size: #{c.vw($list-width / 3, 1920)};
+  }
+
+  @media (--desktop-height-sm) {
+    --size: calc(100% / 3);
+    --icon-size-min: 1rem;
+    --icon-size: 12rem;
+  }
+
+  &:hover {
+    @media (--desktop) {
+      --icon-bg-color: #fff;
+      --title-weight: 700;}
+  }
+}
+
+.why-card__icon {
+  $icon-bg-size: 6.8rem;
+  // модификатор: путь изображения
+  $icons: ('2': '../images/icon-why-2.png', '3': '../images/icon-why-3.png', '4': '../images/icon-why-4.png','5': '../images/icon-why-5.png','6': '../images/icon-why-6.png',);
+
+  @include c.bg-img('../images/icon-why-1.png', $icon-bg-size);
+
+  min-width: var(--icon-size-min);
+  width: var(--icon-size);
+  min-height: var(--icon-size-min);
+  height: var(--icon-size);
+  margin-bottom: 2rem;
+  background-color: var(--icon-bg-color);
+  border-radius: 50%;
+
+  @each $index, $src in $icons {
+    &--#{$index} {
+      background-image: url($src);
+    }
+  }
+
+  @media (--desktop), (--desktop-height-sm) {
+    $icon-bg-size: 6rem;
+    
+    background-size: $icon-bg-size;
+  }
+  @media (--desktop-md) {
+    $icon-bg-size: 9rem;
+    
+    background-size: $icon-bg-size;
+  }
+}
+
+.why-card__title {
+  @include c.font-size(12, 16);
+  
+  font-weight: var(--title-weight);
+  text-align: center;
+
+  @media (--desktop), (--desktop-height-sm) {
+    font-size: 1.6rem;
+  }
+
+  @media (--desktop-md) {
+    font-size: 1.8rem;
+  }
+
+  @media (--desktop-lg) {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,9 @@
+@use '../functions' as fn;
+
+$adaptive-mod: 1.5;
+
+// px to em/rem
+@mixin font-size($font-size, $line-height) {
+  font-size: fn.rem($font-size);
+  line-height: fn.em($line-height, $font-size);
+}

@@ -1,31 +1,25 @@
 // Core
-@import 'var';
+@forward 'var';
 
 // @import "../../node_modules/simplebar/dist/simplebar.min.css";
 
 // Lib
-@import 'lib/normalize';
-@import 'lib/owl.carousel';
+@use 'lib/normalize';
+// @import 'lib/owl.carousel';
 // @import "../node_modules/animate.css/animate.css";
-@import 'lib/simplebar';
+// @import 'lib/simplebar';
 // @import "lib/sprite.css";
 
 // Main
-@import 'main/scaffolding';
-@import 'main/grid';
-@import 'main/typography';
-@import 'main/links';
-@import 'main/media';
-@import 'main/btn';
-@import 'main/input';
+@use 'main';
 
 // Utilities
-@import 'utilities/custom-media.pcss';
-@import 'utilities/animation';
-@import 'utilities/list-unstyled';
+@use 'utilities/custom-media';
+// @use 'utilities/animation';
+// @use 'utilities/list-unstyled';
 
 // /* Component */
-@use 'components/Hero';
+@use 'components';
 // @import 'components/PageHeader/page-header';
 // @import 'components/PageHeader/header-phone';
 // @import 'components/PageNav/page-nav';

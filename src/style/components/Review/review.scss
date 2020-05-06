@@ -1,0 +1,152 @@
+@use '../../config' as c;
+
+.review {
+  --avatar-size: #{c.vw(234)};
+  --avatar-img-size: calc(var(--avatar-size) * 0.88);
+  --icon-size: 6.4rem;
+
+  @include c.bg-img('../images/bg-review.png', 100% 100%);
+
+  padding-bottom: 3.5rem;
+
+  @media (--desktop) {
+    --avatar-size: calc(46.4rem * 0.8);
+    // --avatar-size: #{c.vw(464, 1920)}; // 46.4rem;
+    --icon-size: calc(14.4rem * 0.8);
+
+    height: 100vh;
+  }
+
+  @media (--desktop-md) {
+    --avatar-size: 46.4rem;
+    // --avatar-size: #{c.vw(464, 1920)}; // 46.4rem;
+    --icon-size: 14.4rem;
+
+    height: 100vh;
+  }
+
+  @media (--desktop-height-sm) {
+    --avatar-size: 30rem;
+  }
+}
+
+.review__wrap {
+  padding: 8em var(--wrap-padding) 0;
+
+  @media (--desktop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.review__title {
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+
+  @media (--desktop) {
+    margin-bottom: 0;
+  }
+}
+
+.review__info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (--desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 142rem;
+    width: 100%;
+  }
+
+  @media (--desktop-height-sm) {
+    justify-content: space-around;
+  }
+}
+
+.review__avatar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  margin-bottom: 5rem;
+  border-radius: 50%;
+
+  @media (--desktop) {
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent;
+    border-bottom-color: var(--orange);
+    border-radius: 50%;
+    transform: rotate(35deg);
+  }
+}
+
+.review__img {
+  width: var(--avatar-img-size);
+  height: var(--avatar-img-size);
+  background-color: #fff;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.review__desc {
+  margin-bottom: 7rem;
+
+  @media (--desktop) {
+    max-width: 83.4rem;
+    max-height: var(--avatar-size);
+    margin-bottom: 0;
+    overflow: auto auto;
+  }
+}
+
+.review__text {
+  margin-bottom: 1.5em;
+
+  p {
+    margin-bottom: 1em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.review__name {
+  font-weight: 700;
+}
+
+.review__icon {
+  $icons: ('2': '../images/icon-bg-review-2.png', '3': '../images/icon-bg-review-3.png');
+
+  @include c.bg-img('../images/icon-bg-review-1.png', cover);
+
+  position: absolute;
+  top: calc(var(--avatar-img-size) - var(--icon-size) * 0.3);
+  right: calc(var(--icon-size) * 0.3);
+  width: var(--icon-size);
+  height: var(--icon-size);
+
+  @each $index, $src in $icons {
+    &--#{$index} {
+      background-image: url($src);
+    }
+  }
+}
