@@ -30,6 +30,12 @@ body {
   position: relative;
 }
 
+// ошибки формы
+input.has-error,
+input.custom-checkbox_input.has-error + .custom-checkbox_checkmark {
+  border: 1px solid #f00;
+}
+
 /* Специальные классы */
 
 // .only-desktop {
