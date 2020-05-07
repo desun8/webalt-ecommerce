@@ -92,8 +92,18 @@
     }
 
     @media (--desktop) {
+      left: auto;
       width: 45%;
       padding-top: 0;
+    }
+
+
+    &::-webkit-scrollbar,
+    *::-webkit-scrollbar {
+      @media (--desktop) {
+        width: 0;
+        background: transparent;        
+      }
     }
   }
 

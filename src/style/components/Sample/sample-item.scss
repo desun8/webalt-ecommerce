@@ -1,19 +1,28 @@
+@use '../../config' as c;
+
 .sample-item {
   // @extend %trans-slow;
 
   position: relative;
   width: 100%;
-  height: 246px;
+  min-width: 28rem;
+  width: c.vw(280);
+  min-height: 24.6rem;
+  height: c.vw(246);
   background-color: rgba(20, 20, 20, 0.6);
   border-radius: 4px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
   transition-duration: 600ms;
   cursor: pointer;
 
+  @media (--tablet) {
+    height: auto;
+  }
+
   @media (--desktop) {
     width: 295px;
     height: 450px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     border-radius: 5px;
     filter: blur(0);
     will-change: filter;
@@ -24,15 +33,23 @@
     height: 500px;
   }
 
+  @media (--desktop-height-md) {
+    max-height: c.vh(500);
+  }
+
+  @media (--desktop-height-sm) {
+    max-height: c.vh(500);
+  }
+
   &::after {
     // @extend %trans-slow;
 
     position: absolute;
-    bottom: -18px;
+    bottom: -1.8rem;
     left: 50%;
     transform: translateX(-50%);
     width: 0;
-    height: 8px;
+    height: 0.8rem;
     background: #de9b55;
     box-shadow: 0 2px 4px rgba(222, 155, 85, 0.4);
     border-radius: 7px;
@@ -95,7 +112,8 @@
 
   &_img {
     width: 100%;
-    height: 150px;
+    min-height: 15rem;
+    height: c.vw(150);
     margin-bottom: 10px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -110,6 +128,14 @@
 
     @media (--desktop-md) {
       height: 366px;
+    }
+
+    @media (--desktop-height-md) {
+      height: c.vh(366);
+    }
+
+    @media (--desktop-height-sm) {
+      max-height: c.vh(320);
     }
   }
 
@@ -147,27 +173,25 @@
   }
 
   &_title {
-    margin-bottom: 8px;
-    font-size: 22px;
-    line-height: 26px;
+    @include c.font-size(22,26);
+    
+    margin-bottom: 0.8rem;
     font-weight: 500;
 
     @media (--desktop) {
       margin-bottom: 10px;
-      font-size: 26px;
-      line-height: 30px;
+      font-size: 2.6rem;
     }
   }
 
   &_type {
-    font-size: 16px;
-    line-height: 18px;
+    @include c.font-size(15,20);
+
     font-weight: 300;
     opacity: 0.8;
 
     @media (--desktop) {
-      font-size: 18px;
-      line-height: 21px;
+      font-size: 1.8rem;
     }
   }
 }

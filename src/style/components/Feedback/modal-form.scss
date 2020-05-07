@@ -1,3 +1,5 @@
+@use '../../config' as c;
+
 .modal {
   // @extend %trans-slow;
 
@@ -111,26 +113,23 @@
 
   &_submit {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    @media (--only-mobile) {
-      flex-direction: column;
-    }
+    height: 100%;
   }
 
   &_submit-text {
-    color: #fff;
-    font-size: 50px;
-    font-weight: 300;
-    margin-right: 15px;
+    @include c.font-size(22, 28);
 
-    @media (--only-mobile) {
-      font-size: 22px;
-      line-height: 28px;
-      margin-right: 0;
-      margin-bottom: 30px;
-      text-align: center;
+    margin-bottom: c.em(30, 22);
+
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+
+    @media (--desktop) {
+      font-size: 5rem;
     }
   }
 
@@ -142,57 +141,6 @@
     line-height: 28px;
     text-align: center;
 
-  }
-
-  .form-feedback {
-    @media (--desktop) {
-      // @include flex-container;
-
-      flex-direction: row;
-      justify-content: space-between;
-      max-width: 540px;
-    }
-
-    &_message {
-      @media (--desktop) {
-        height: 260px;
-      }
-    }
-
-    &_agreements {
-      @media (--desktop) {
-        margin-bottom: 30px;
-        padding-left: 42px;
-        color: #f6f6f6;
-        font-size: 16px;
-        line-height: 21px;
-      }
-
-      .custom-checkbox_checkmark {
-        @media (--desktop) {
-          top: 50%;
-          width: 36px;
-          height: 36px;
-          transform: translate3d(0, -50%, 0);
-        }
-
-        &::after {
-          @media (--desktop) {
-            left: 11px;
-            top: 5px;
-            width: 12px;
-            height: 20px;
-            // border: solid #f6f6f6;
-            border-width: 0 4px 4px 0;
-            transform: rotate(45deg);
-          }
-        }
-      }
-    }
-
-    input {
-      margin-bottom: 0;
-    }
   }
 
   .btn {

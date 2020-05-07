@@ -4,7 +4,10 @@
 @custom-media --desktop (width >= 68.75em);
 @custom-media --desktop-md (width >= 90em);
 @custom-media --desktop-lg (width >= 100em);
+
 @custom-media --desktop-height-sm (height < 43.75em) and (--desktop);
+@custom-media --desktop-height-md (height <= 50em) and (--desktop);
+
 @custom-media --only-mobile (width < 68.75em);
 
 /* desktop first */

@@ -15,227 +15,227 @@ const paths = {
   build: buildPath,
   watch: buildPathWatch,
   img: {
-    src: "./src/images/*.{png,jpeg,jpg,svg}",
+    src: `${buildPath}/*.{png,jpeg,jpg,svg}`,
     svgNoStyle: "./src/images/svgNoStyle/*.svg",
-    dest: `${buildPath}/images`,
+    dest: `${buildPath}/`,
   },
   spriteSvg: {
     src: "./src/images/assets/svg/**/*.{svg}",
-    dest: `${buildPath}/images`,
+    dest: `${buildPath}/`,
   },
 };
 
 // svg params
 const svgoParams = {
   plugins: [
-    {;
+    {
       cleanupAttrs: true,
     },
-    {;
+    {
       removeDoctype: true,
     },
-    {;
+    {
       removeXMLProcInst: true,
     },
-    {;
+    {
       removeComments: true,
     },
-    {;
+    {
       removeMetadata: true,
     },
-    {;
+    {
       removeTitle: true,
     },
-    {;
+    {
       removeDesc: true,
     },
-    {;
+    {
       removeUselessDefs: true,
     },
-    {;
+    {
       removeEditorsNSData: true,
     },
-    {;
+    {
       removeEmptyAttrs: true,
     },
-    {;
+    {
       removeHiddenElems: true,
     },
-    {;
+    {
       removeEmptyText: true,
     },
-    {;
+    {
       removeEmptyContainers: true,
     },
-    {;
+    {
       removeViewBox: false,
     },
-    {;
+    {
       cleanupEnableBackground: true,
     },
-    {;
+    {
       convertStyleToAttrs: true,
     },
-    {;
+    {
       convertColors: true,
     },
-    {;
+    {
       convertPathData: true,
     },
-    {;
+    {
       convertTransform: true,
     },
-    {;
+    {
       removeUnknownsAndDefaults: true,
     },
-    {;
+    {
       removeNonInheritableGroupAttrs: true,
     },
-    {;
+    {
       removeUselessStrokeAndFill: true,
     },
-    {;
+    {
       removeUnusedNS: true,
     },
-    {;
+    {
       cleanupIDs: true,
     },
-    {;
+    {
       cleanupNumericValues: true,
     },
-    {;
+    {
       moveElemsAttrsToGroup: true,
     },
-    {;
+    {
       moveGroupAttrsToElems: true,
     },
-    {;
+    {
       collapseGroups: true,
     },
-    {;
+    {
       removeRasterImages: false,
     },
-    {;
+    {
       mergePaths: true,
     },
-    {;
+    {
       convertShapeToPath: true,
     },
-    {;
+    {
       sortAttrs: true,
     },
-    {;
+    {
       removeDimensions: true,
     },
     // {
-    //;   removeAttrs: {; attrs: "(stroke|fill)" }
+    // ;   removeAttrs: { attrs: "(stroke|fill)" }
     // }
   ],
 };
 
 const svgoParamsClearStyle = {
   plugins: [
-    {;
+    {
       cleanupAttrs: true,
     },
-    {;
+    {
       removeDoctype: true,
     },
-    {;
+    {
       removeXMLProcInst: true,
     },
-    {;
+    {
       removeComments: true,
     },
-    {;
+    {
       removeMetadata: true,
     },
-    {;
+    {
       removeTitle: true,
     },
-    {;
+    {
       removeDesc: true,
     },
-    {;
+    {
       removeUselessDefs: true,
     },
-    {;
+    {
       removeEditorsNSData: true,
     },
-    {;
+    {
       removeEmptyAttrs: true,
     },
-    {;
+    {
       removeHiddenElems: true,
     },
-    {;
+    {
       removeEmptyText: true,
     },
-    {;
+    {
       removeEmptyContainers: true,
     },
-    {;
+    {
       removeViewBox: false,
     },
-    {;
+    {
       cleanupEnableBackground: true,
     },
-    {;
+    {
       convertStyleToAttrs: true,
     },
-    {;
+    {
       convertColors: true,
     },
-    {;
+    {
       convertPathData: true,
     },
-    {;
+    {
       convertTransform: true,
     },
-    {;
+    {
       removeUnknownsAndDefaults: true,
     },
-    {;
+    {
       removeNonInheritableGroupAttrs: true,
     },
-    {;
+    {
       removeUselessStrokeAndFill: true,
     },
-    {;
+    {
       removeUnusedNS: true,
     },
-    {;
+    {
       cleanupIDs: true,
     },
-    {;
+    {
       cleanupNumericValues: true,
     },
-    {;
+    {
       moveElemsAttrsToGroup: true,
     },
-    {;
+    {
       moveGroupAttrsToElems: true,
     },
-    {;
+    {
       collapseGroups: true,
     },
-    {;
+    {
       removeRasterImages: false,
     },
-    {;
+    {
       mergePaths: true,
     },
-    {;
+    {
       convertShapeToPath: true,
     },
-    {;
+    {
       sortAttrs: true,
     },
-    {;
+    {
       removeDimensions: true,
     },
-    {;
-      removeAttrs: {; attrs: "(stroke|fill)" },
+    {
+      removeAttrs: { attrs: "(stroke|fill)" },
     },
   ],
 };
@@ -243,11 +243,11 @@ const svgoParamsClearStyle = {
 const svgSpriteConfig = {
   shape: {
     dimension: {
-      maxWidth: 32,;
+      maxWidth: 32,
       maxHeight: 32,
     },
     spacing: {
-      padding: 10,;
+      padding: 10,
       box: "content",
     },
   },
@@ -322,9 +322,8 @@ export { imageMin as imagemin };
 export { svgNoStyle as svgclear };
 export { spriteSvg as spritesvg };
 
-const def = gulp.parallel(watch, serve);
-const build = gulp.parallel(htmlInclude, makeStyle, jsBuild);
+// const def = gulp.parallel(watch, serve);
+// const build = gulp.parallel(htmlInclude, makeStyle, jsBuild);
 
-export { build };
-export default def;
-}
+// export { build };
+export default imageMin;

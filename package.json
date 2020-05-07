@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url . --no-minify",
+    "build": "rm -rf dist && parcel build src/index.html --public-url . --no-minify",
     "prod": "parcel build src/index.html --public-url .",
     "deploy": "gh-pages -d dist"
   },
@@ -16,6 +16,7 @@
     "fullpage.js": "^3.0.7",
     "gsap": "^2.1.3",
     "imask": "^5.2.1",
+    "inputmask": "^5.0.3",
     "jquery": "^3.4.1",
     "lodash": "^4.17.11",
     "owl.carousel": "^2.3.4",
@@ -23,6 +24,7 @@
     "simplebar": "^4.3.0-alpha.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
