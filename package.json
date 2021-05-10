@@ -37,7 +37,7 @@
     "imask": "^5.2.1",
     "jpegtran-bin": "^4.0.0",
     "jquery": "^3.5.0",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "node-sass": "^4.13.1",
     "owl.carousel": "^2.3.4",
     "postcss-custom-media": "^7.0.8",
